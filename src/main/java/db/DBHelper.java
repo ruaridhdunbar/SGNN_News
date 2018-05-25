@@ -159,6 +159,35 @@ public class DBHelper {
         return articles;
     }
 
+    public static List<Article> orderByDateCreatedAscending(){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Article> articles = null;
+        try {
+            Criteria cr = session.createCriteria(Article.class);
+            cr.addOrder(Order.asc("date_created"));
+            articles = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return articles;
+    }
+
+    public static List<Article> orderByDateCreatedDescending(){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Article> articles = null;
+        try {
+            Criteria cr = session.createCriteria(Article.class);
+            cr.addOrder(Order.desc("date_created"));
+            articles = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return articles;
+    }
 
 
 
