@@ -130,12 +130,12 @@ public class DBHelper {
 
     }
 
-    public static List<Article> orderByPageViewsAscending(){
+    public static List<Article> orderByPageViewsFewestFirst(){
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
             Criteria cr = session.createCriteria(Article.class);
-            cr.addOrder(Order.asc("page_views"));
+            cr.addOrder(Order.asc("pageViews"));
             articles = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -145,12 +145,12 @@ public class DBHelper {
         return articles;
     }
 
-    public static List<Article> orderByPageViewsDescending(){
+    public static List<Article> orderByPageViewsMostFirst(){
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
             Criteria cr = session.createCriteria(Article.class);
-            cr.addOrder(Order.desc("page_views"));
+            cr.addOrder(Order.desc("pageViews"));
             articles = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -160,12 +160,12 @@ public class DBHelper {
         return articles;
     }
 
-    public static List<Article> orderByDateCreatedAscending(){
+    public static List<Article> orderByDateCreatedOldestFirst(){
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
             Criteria cr = session.createCriteria(Article.class);
-            cr.addOrder(Order.asc("date_created"));
+            cr.addOrder(Order.asc("dateCreated"));
             articles = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -175,12 +175,12 @@ public class DBHelper {
         return articles;
     }
 
-    public static List<Article> orderByDateCreatedDescending(){
+    public static List<Article> orderByDateCreatedNewestFirst(){
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
             Criteria cr = session.createCriteria(Article.class);
-            cr.addOrder(Order.desc("date_created"));
+            cr.addOrder(Order.desc("dateCreated"));
             articles = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
