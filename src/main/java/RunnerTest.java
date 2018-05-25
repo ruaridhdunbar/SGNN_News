@@ -14,10 +14,10 @@ public class RunnerTest {
         DBHelper.deleteAll(Journalist.class);
         DBHelper.deleteAll(Article.class);
 
-        Journalist journalist1 = new Journalist("Hunter S Thompson");
+        Journalist journalist1 = new Journalist("John S Thompson");
         DBHelper.save(journalist1);
 
-        Journalist journalist2 = new Journalist("Walter Cronkite");
+        Journalist journalist2 = new Journalist("John Cronkite");
         DBHelper.save(journalist2);
 
         Article article1 = new Article(journalist1, "Scotland 'would keep pound' in years after independence", "A long awaited SNP report says the country could later move towards introducing it's own currency.", "Nicola Sturgeon spoke today at the unveiling of a 20-ft solid gold statue of Alex Salmond in which she espoused that Scotland would become the richest country ever mere seconds after independence.", CategoryType.SCOTLAND);
@@ -56,6 +56,10 @@ public class RunnerTest {
         List<Article> articlesByCategory = DBHelper.findByCategory(CategoryType.UK);
 
         List<Article> articlesByJournalist = DBHelper.articlesForJournalist(journalist1);
+
+        List<Article> searchArticleHeadline = DBHelper.searchArticlesHeadline("War");
+        List<Article> searchArticleSummary = DBHelper.searchArticlesSummary("Boris");
+        List<Journalist> searchJournalistsName = DBHelper.searchJournalists("john");
 
 
     }

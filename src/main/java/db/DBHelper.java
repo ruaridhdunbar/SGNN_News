@@ -11,6 +11,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
+import java.util.Set;
 
 public class DBHelper {
 
@@ -98,11 +99,9 @@ public class DBHelper {
         session = HibernateUtil.getSessionFactory().openSession();
         T result = null;
         try {
-            transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(classType);
             cr.add(Restrictions.eq("id", id));
             result = (T) cr.uniqueResult();
-            transaction.commit();
         } catch (HibernateException e) {
             transaction.rollback();
             e.printStackTrace();
@@ -198,12 +197,56 @@ public class DBHelper {
             cr.add(Restrictions.eq("category", category));
             articles = cr.list();
         } catch (HibernateException e) {
-            transaction.rollback();
             e.printStackTrace();
         } finally {
             session.close();
         }
         return articles;
+    }
+
+    public static List<Article> searchArticlesHeadline(String search) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Article> results = null;
+        try {
+            Criteria cr = session.createCriteria(Article.class);
+            cr.add(Restrictions.ilike("headline", "%search%"));
+            results = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
+    public static List<Article> searchArticlesSummary(String search) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Article> results = null;
+        try {
+            Criteria cr = session.createCriteria(Article.class);
+            cr.add(Restrictions.ilike("summary", "%search%"));
+            results = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
+    public static List<Journalist> searchJournalists(String search) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Journalist> results = null;
+        try {
+            Criteria cr = session.createCriteria(Journalist.class);
+            cr.add(Restrictions.ilike("name", "%search%"));
+            results = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
     }
 
 

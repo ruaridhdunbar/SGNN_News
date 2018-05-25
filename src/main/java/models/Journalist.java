@@ -37,6 +37,7 @@ public class Journalist {
     public void setId(int id) {
         this.id = id;
     }
+
     @OneToMany(mappedBy = "journalist")
     public Set<Article> getArticles() {
         return articles;
@@ -46,15 +47,15 @@ public class Journalist {
         this.articles = articles;
     }
 
-    public void addArticle(Article article){
+    public void addArticle(Article article) {
         this.articles.add(article);
     }
 
-    public void removeArticle(Article article){
+    public void removeArticle(Article article) {
         this.articles.remove(article);
     }
 
-    public int articleCount(){
+    public int articleCount() {
         return articles.size();
     }
 }
