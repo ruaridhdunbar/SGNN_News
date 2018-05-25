@@ -110,4 +110,24 @@ public class DBHelper {
         System.out.println(result);
         return result;
     }
+
+    public static List<Article> articlesForJournalist(Journalist journalist) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Article> articles = null;
+
+        try {
+            Criteria cr = session.createCriteria(Article.class);
+            cr.add(Restrictions.eq("journalist", journalist ));
+            articles = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close()
+        }
+        return articles;
+
+    }
+
+
+
 }
