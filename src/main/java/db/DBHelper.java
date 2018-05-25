@@ -122,7 +122,7 @@ public class DBHelper {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
-            session.close()
+            session.close();
         }
         return articles;
 
