@@ -1,5 +1,6 @@
 package db;
 
+import models.CategoryType;
 import models.Journalist;
 import models.Article;
 import org.hibernate.Criteria;
@@ -182,6 +183,22 @@ public class DBHelper {
             cr.addOrder(Order.desc("date_created"));
             articles = cr.list();
         } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return articles;
+    }
+
+    public static List<Article> findByCategory(CategoryType category) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Article> articles = null;
+        try {
+            Criteria cr = session.createCriteria(Article.class);
+            cr.add(Restrictions.eq("category", category));
+            articles = cr.list();
+        } catch (HibernateException e) {
+            transaction.rollback();
             e.printStackTrace();
         } finally {
             session.close();
