@@ -111,7 +111,7 @@ public class DBHelper {
         return result;
     }
 
-    public static List<Article> articlesForJournalist(Journalist journalist) {
+    public static List<Article> getArticlesForJournalist(Journalist journalist) {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
 
@@ -122,10 +122,9 @@ public class DBHelper {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
-            session.close()
+            session.close();
         }
         return articles;
-
     }
 
 
