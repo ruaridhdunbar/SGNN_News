@@ -21,9 +21,6 @@ public class JournalistController {
     private void setupEndpoints() {
 
 
-
-
-
         //        SHOW
         get("/journalists/:id", (req, res) -> {
             String strId = req.params(":id");

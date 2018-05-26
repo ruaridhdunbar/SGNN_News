@@ -2,19 +2,15 @@ package controllers;
 
 import db.DBHelper;
 import models.Article;
-import models.CategoryType;
-import models.Journalist;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 import static spark.Spark.get;
-import static spark.Spark.head;
-import static spark.Spark.post;
+
 
 public class ArticleController {
 
@@ -32,8 +28,6 @@ public class ArticleController {
             model.put("template", "templates/articles/index.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
-
-
 
 
 
