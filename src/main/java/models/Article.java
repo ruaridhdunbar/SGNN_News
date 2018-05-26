@@ -2,7 +2,6 @@ package models;
 
 import javax.persistence.*;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 @Entity
@@ -14,7 +13,7 @@ public class Article {
     private String headline;
     private String summary;
     private String story;
-    private Date dateCreated;
+    private Calendar dateCreated;
     private CategoryType category;
     private int pageViews;
 
@@ -26,7 +25,7 @@ public class Article {
         this.headline = headline;
         this.summary = summary;
         this.story = story;
-        this.dateCreated = Calendar.getInstance().getTime();
+        this.dateCreated = GregorianCalendar.getInstance();
         this.category = category;
         this.pageViews = 0;
     }
@@ -61,7 +60,7 @@ public class Article {
         this.headline = headline;
     }
 
-    @Column(name="summary")
+    @Column(name="summary", length = 1024)
     public String getSummary() {
         return summary;
     }
@@ -70,7 +69,7 @@ public class Article {
         this.summary = summary;
     }
 
-    @Column(name="story")
+    @Column(name="story", length = 1024)
     public String getStory() {
         return story;
     }
@@ -80,11 +79,11 @@ public class Article {
     }
 
     @Column(name = "date_created")
-    public Date getDateCreated() {
+    public Calendar getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
+    public void setDateCreated(Calendar dateCreated) {
         this.dateCreated = dateCreated;
     }
 

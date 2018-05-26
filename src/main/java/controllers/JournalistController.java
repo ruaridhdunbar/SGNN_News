@@ -74,7 +74,7 @@ public class JournalistController {
             String name = req.queryParams("name");
             Journalist journalist = new Journalist(name);
             DBHelper.save(journalist);
-            res.redirect("/journalists");
+            res.redirect("/admin");
             return null;
         }, new VelocityTemplateEngine());
 
@@ -82,18 +82,18 @@ public class JournalistController {
             int id = Integer.parseInt(req.params(":id"));
             Journalist journalistToDelete = DBHelper.find(id, Journalist.class);
             DBHelper.delete(journalistToDelete);
-            res.redirect("/departments");
+            res.redirect("/admin");
             return null;
         }, new VelocityTemplateEngine());
 
-        post ("/departments/:id", (req, res) -> {
+        post ("/journalists/:id", (req, res) -> {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
             Journalist journalist = DBHelper.find(intId, Journalist.class);
             String name = req.queryParams("name");
             journalist.setName(name);
             DBHelper.update(journalist);
-            res.redirect("/journalists");
+            res.redirect("/admin");
             return null;
 
         }, new VelocityTemplateEngine());
