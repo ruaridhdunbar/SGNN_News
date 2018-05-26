@@ -23,7 +23,14 @@ public class MainController {
         JournalistController journalistController = new JournalistController();
         ArticleController articleController = new ArticleController();
 
-        get("/", (req, res) -> {
+        get("/news", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("template", "templates/main.vtl");
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, new VelocityTemplateEngine());
+
+
+        get("/admin", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
             model.put("user", loggedInUser);
@@ -31,7 +38,6 @@ public class MainController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
-
 
     }
 }

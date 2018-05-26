@@ -44,7 +44,7 @@ public class ArticleController {
         }, new VelocityTemplateEngine());
 
 
-//        SHOW
+        //        SHOW
         get("/articles/:id", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Article manager = DBHelper.find(id, Article.class);
@@ -55,7 +55,7 @@ public class ArticleController {
         }, new VelocityTemplateEngine());
 
 
-//        CREATE
+        //        CREATE
         post("/admin/articles", (req, res) -> {
             int journalistId = Integer.parseInt(req.queryParams("journalist"));
             Journalist journalist = DBHelper.find(journalistId, Journalist.class);
@@ -90,6 +90,7 @@ public class ArticleController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
+
         //        UPDATE
         post("/admin/articles/:id", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
@@ -108,7 +109,8 @@ public class ArticleController {
             return null;
         });
 
-//        DELETE
+
+        //        DELETE
         post("/admin/article/:id/delete", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Article article = DBHelper.find(id, Article.class);
