@@ -57,8 +57,8 @@ public class RunnerTest {
 
         List<Article> articlesByJournalist = DBHelper.articlesForJournalist(journalist1);
 
-        List<Article> searchArticleHeadline = DBHelper.searchArticlesHeadline("War");
-        List<Article> searchArticleSummary = DBHelper.searchArticlesSummary("Boris");
+        List<Article> searchArticleHeadline = DBHelper.searchArticlesHeadline("WAr");
+        List<Article> searchArticleSummary = DBHelper.searchArticlesSummary("DOOR");
         List<Journalist> searchJournalistsName = DBHelper.searchJournalists("john");
 
 

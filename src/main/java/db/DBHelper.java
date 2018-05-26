@@ -209,7 +209,7 @@ public class DBHelper {
         List<Article> results = null;
         try {
             Criteria cr = session.createCriteria(Article.class);
-            cr.add(Restrictions.ilike("headline", "%search%"));
+            cr.add(Restrictions.ilike("headline", "%" + search + "%"));
             results = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -224,7 +224,7 @@ public class DBHelper {
         List<Article> results = null;
         try {
             Criteria cr = session.createCriteria(Article.class);
-            cr.add(Restrictions.ilike("summary", "%search%"));
+            cr.add(Restrictions.ilike("summary", "%" + search + "%"));
             results = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -239,7 +239,7 @@ public class DBHelper {
         List<Journalist> results = null;
         try {
             Criteria cr = session.createCriteria(Journalist.class);
-            cr.add(Restrictions.ilike("name", "%search%"));
+            cr.add(Restrictions.ilike("name", "%" + search + "%"));
             results = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
