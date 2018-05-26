@@ -61,6 +61,12 @@ public class RunnerTest {
         List<Article> searchArticleSummary = DBHelper.searchArticlesSummary("DOOR");
         List<Journalist> searchJournalistsName = DBHelper.searchJournalists("john");
 
+        System.out.println(cal3);
+
+        System.out.println(cal3.get(Calendar.DAY_OF_MONTH));
+        System.out.println(cal3.get(Calendar.MONTH));
+        System.out.println(article3.prettyDate());
+        System.out.println(journalist1.getId());
 
     }
 }

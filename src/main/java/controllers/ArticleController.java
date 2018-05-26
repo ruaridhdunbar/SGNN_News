@@ -2,6 +2,7 @@ package controllers;
 
 import db.DBHelper;
 import models.Article;
+import models.Journalist;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -22,23 +23,25 @@ public class ArticleController {
 
         //        INDEX
         get("/articles", (req, res) -> {
-            List<Article> managers = DBHelper.getAll(Article.class);
+            List<Article> articles = DBHelper.getAll(Article.class);
             HashMap<String, Object> model = new HashMap<>();
-            model.put("articles", managers);
+            model.put("articles", articles);
             model.put("template", "templates/articles/index.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
 
-
         //        SHOW
         get("/articles/:id", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
-            Article manager = DBHelper.find(id, Article.class);
+            Article article = DBHelper.find(id, Article.class);
+            Journalist journalist = article.getJournalist();
             HashMap<String, Object> model = new HashMap<>();
-            model.put("article", manager);
+            model.put("journalist", journalist);
+            model.put("article", article);
             model.put("template", "templates/articles/show.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
     }
+
 }
