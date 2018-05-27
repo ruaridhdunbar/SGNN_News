@@ -1,0 +1,22 @@
+<p class="pageHeader">SGNN News Website Administration </p>
+<p>Welcome $user. Here you can create, edit or remove articles.</p>
+
+<div class="admin/article">
+
+    <a href="/admin/articles/new" class = "button center"> Add a New Article </a>
+
+    <table>
+        <tr>
+            <th>SGNN Articles</th>
+        </tr>
+
+        #foreach($article in $articles)
+        <tr>
+            <td><a>$article.getHeadline()</a></td>
+            <td><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></td>
+            <td><a href="/admin/articles/$article.getId()/delete" class = "button center"> Delete </a></td>
+        </tr>
+        #end
+
+    </table>
+</div>
