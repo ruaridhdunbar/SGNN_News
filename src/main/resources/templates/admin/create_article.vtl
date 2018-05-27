@@ -10,6 +10,16 @@
     <label for="story">Body:</label>
     <input class="inputbox" type="text" name="story" required="true">
 
+    <!--needs to be changed to take enum type-->
+    <label for="story">Category:</label>
+    <input class="select" type="text" name="category" required="true" value="$category.name()">
+
+    <select id="journalist" name="journalist">
+        #foreach( $journalist in $journalists )
+        <option value="$journalist.getId()">$journalist.getName()</option>
+        #end
+    </select>
+
     <input type="submit" value="Save" class="button">
 
 </form>

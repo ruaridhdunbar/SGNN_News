@@ -31,7 +31,7 @@ public class AdminController{
             model.put("user", loggedInUser);
             model.put("template", "templates/admin/article.vtl");
             model.put("articles", articles);
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
 
@@ -41,7 +41,7 @@ public class AdminController{
             HashMap<String, Object> model = new HashMap<>();
             model.put("journalist", journalists);
             model.put("template", "templates/admin/create_article.vtl");
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
         //        CREATE ARTICLE
@@ -76,7 +76,7 @@ public class AdminController{
             model.put("template", "templates/admin/edit_article.vtl");
             model.put("article", article);
 
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
 
@@ -117,7 +117,7 @@ public class AdminController{
             model.put("user", loggedInUser);
             model.put("template", "templates/admin/journalist.vtl");
             model.put("journalists", journalists);
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
 //        //          NEW JOURNALIST
@@ -150,7 +150,7 @@ public class AdminController{
             model.put("journalist", journalist);
             model.put("template", "templates/admin/edit_journalist.vtl");
 
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
 
