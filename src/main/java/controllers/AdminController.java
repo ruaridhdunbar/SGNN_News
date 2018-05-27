@@ -147,7 +147,7 @@ public class AdminController{
             Journalist journalist = DBHelper.find(intId, Journalist.class);
             String name = req.queryParams("name");
             journalist.setName(name);
-            DBHelper.update(journalist);
+            DBHelper.save(journalist);
             res.redirect("/admin/journalists");
             return null;
 

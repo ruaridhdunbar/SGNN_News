@@ -23,7 +23,7 @@ public class ArticleController {
 
         //        INDEX
         get("/articles", (req, res) -> {
-            List<Article> articles = DBHelper.getAll(Article.class);
+            List<Article> articles = DBHelper.orderByDateCreatedNewestFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
             model.put("template", "templates/articles/index.vtl");
@@ -35,11 +35,9 @@ public class ArticleController {
         get("/articles/:id", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Article article = DBHelper.find(id, Article.class);
-//            article.addToPageViews();
-//            String pageViews  = String.valueOf(article.getPageViews());
+            DBHelper.save(article);
             Journalist journalist = article.getJournalist();
             HashMap<String, Object> model = new HashMap<>();
-//            model.put("pageViews", pageViews);
             model.put("journalist", journalist);
             model.put("article", article);
             model.put("template", "templates/articles/show.vtl");

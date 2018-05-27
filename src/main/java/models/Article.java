@@ -112,7 +112,7 @@ public class Article {
     }
 
     public void addToPageViews() {
-        this.pageViews ++;
+        this.pageViews = this.pageViews + 1;
     }
 
     public String prettyDate() {
