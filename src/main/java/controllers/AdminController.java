@@ -118,13 +118,6 @@ public class AdminController{
             return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
-//        //          NEW JOURNALIST
-//        get("/admin/journalists/new", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            String loggedInUser = LoginController.getLoggedInUserName(req, res);
-//            model.put("user", loggedInUser);
-//            return new ModelAndView(model, "templates/layout.vtl");
-//        }, new VelocityTemplateEngine());
 
         //        CREATE JOURNALIST
         post("/admin/journalists", (req, res) -> {
