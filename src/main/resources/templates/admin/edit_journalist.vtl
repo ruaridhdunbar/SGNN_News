@@ -1,0 +1,11 @@
+<p class="pageHeader">Edit Journalist</p>
+
+<form action="/admin/journalists/$journalist.getId()" method="post">
+
+    <label for="name">Name:</label>
+    <input class="inputbox" type="text" name="headline" required="true" value="$article.getName()">
+
+    <input type="submit" value="Save" class="button">
+</form>
+
+<a href="/admin/journalists" class="button center">Cancel</a>
