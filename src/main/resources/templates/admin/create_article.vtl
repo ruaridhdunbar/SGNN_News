@@ -1,0 +1,17 @@
+<p class="pageHeader">New Article</p>
+
+<form action="/articles" method="post">
+    <label for="headline">Headline:</label>
+    <input class="inputbox" type="text" name="headline" required="true">
+
+    <label for="summary">Summary:</label>
+    <input class="inputbox" type="text" name="summary" required="true">
+
+    <label for="story">Body:</label>
+    <input class="inputbox" type="text" name="story" required="true">
+
+    <input type="submit" value="Save" class="button">
+
+</form>
+
+<a href="/admin/articles" class="button center">Cancel</a>
