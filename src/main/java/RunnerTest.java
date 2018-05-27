@@ -23,7 +23,7 @@ public class RunnerTest {
         Article article1 = new Article(journalist1, "Scotland 'would keep pound' in years after independence", "A long awaited SNP report says the country could later move towards introducing it's own currency.", "Nicola Sturgeon spoke today at the unveiling of a 20-ft solid gold statue of Alex Salmond in which she espoused that Scotland would become the richest country ever mere seconds after independence.", CategoryType.SCOTLAND);
         article1.setPageViews(3);
         Calendar cal = new GregorianCalendar();
-        cal.set(2014, Calendar.FEBRUARY, 11);
+        cal.set(2018, Calendar.MAY, 25);
         article1.setDateCreated(cal);
 
         DBHelper.save(article1);
@@ -31,7 +31,7 @@ public class RunnerTest {
         Article article2 = new Article(journalist1, "Kim Jong-Un gives up dictatorship to become a US-allied democracy", "In a shocking turn of events, Kim Jong-Un reveals he will have a US-style Senate and House by the end of the month", "Kim Jong-Un has revealed that a heart-to-heart with Donald Trump in which they confided their deepest fears was the catalyst for Kim to go from being a Supreme Leader to merely a normal leader. Donald Trump is expected to receive the Nobel Peace Prize next week, an honour he has described as 'yuge' and 'the most deserved peace prize ever given out in history'", CategoryType.WORLD);
         article2.setPageViews(15);
         Calendar cal2 = new GregorianCalendar();
-        cal2.set(2014, Calendar.DECEMBER, 30);
+        cal2.set(2018, Calendar.MAY, 26);
         article2.setDateCreated(cal2);
         DBHelper.save(article2);
 

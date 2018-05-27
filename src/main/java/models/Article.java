@@ -1,5 +1,7 @@
 package models;
 
+import db.DBHelper;
+
 import javax.persistence.*;
 import java.text.DateFormatSymbols;
 import java.time.LocalDate;
@@ -74,6 +76,7 @@ public class Article {
 
     @Column(name="story", length = 1024)
     public String getStory() {
+        this.addToPageViews();
         return story;
     }
 
@@ -109,7 +112,7 @@ public class Article {
     }
 
     public void addToPageViews() {
-        this.pageViews += 1;
+        this.pageViews ++;
     }
 
     public String prettyDate() {
