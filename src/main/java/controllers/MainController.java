@@ -1,11 +1,14 @@
 package controllers;
 
+import db.DBHelper;
 import db.Seeds;
 import models.Article;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
@@ -26,6 +29,8 @@ public class MainController {
 
         get("/news", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            List<Article> articles = DBHelper.orderByDateCreatedNewestFirst();
+            model.put("articles", articles);
             model.put("template", "templates/main.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());

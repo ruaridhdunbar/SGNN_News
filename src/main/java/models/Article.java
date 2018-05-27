@@ -1,6 +1,9 @@
 package models;
 
 import javax.persistence.*;
+import java.text.DateFormatSymbols;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -107,6 +110,13 @@ public class Article {
 
     public void addToPageViews() {
         this.pageViews += 1;
+    }
+
+    public String prettyDate() {
+        int month = dateCreated.get(Calendar.MONTH);
+        String prettyMonth = new DateFormatSymbols().getMonths()[month];
+        String prettyDate = String.valueOf(dateCreated.get(Calendar.DAY_OF_MONTH)) + " " + prettyMonth + " " + String.valueOf(dateCreated.get(Calendar.YEAR));
+        return prettyDate;
     }
 
 }

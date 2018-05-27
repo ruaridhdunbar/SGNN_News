@@ -1,6 +1,7 @@
 package controllers;
 
 import db.DBHelper;
+import models.Article;
 import models.Journalist;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -26,9 +27,9 @@ public class JournalistController {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
             Journalist journalist = DBHelper.find(intId, Journalist.class);
+            List<Article> articles = DBHelper.articlesForJournalist(journalist);
             Map<String, Object> model = new HashMap<>();
-            String loggedInUser = LoginController.getLoggedInUserName(req, res);
-            model.put("user", loggedInUser);
+            model.put("articles", articles);
             model.put("journalist", journalist);
             model.put("template", "templates/journalists/show.vtl");
             return new ModelAndView(model, "templates/layout.vtl");

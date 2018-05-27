@@ -1,0 +1,11 @@
+<div class="journalist-articles">
+
+    <p>$journalist.getName()</p>
+
+    #foreach ($article in $articles)
+    <p><a href="/articles/$article.getId()">$article.getHeadline()</a></p>
+    <p>$article.prettyDate()</p>
+    <p>$article.getSummary()</p>
+    <p>$article.getStory()</p>
+    #end
+</div>
