@@ -32,7 +32,7 @@ public class JournalistController {
             model.put("articles", articles);
             model.put("journalist", journalist);
             model.put("template", "templates/journalists/show.vtl");
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
 
