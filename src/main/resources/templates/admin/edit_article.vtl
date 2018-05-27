@@ -11,6 +11,32 @@
     <label for="story">Body:</label>
     <input class="inputbox" type="text" name="story" required="true" value="$article.getStory()">
 
+    <label for="story">Category:</label>
+    <input class="select" type="text" name="category" required="true" value="$article.getCategory()">
+
+    <select id="category" name="category">
+        #foreach( $CategoryType in $CategoryType.values())
+        <option value="$CategoryType.ordinal()"
+                <!--#if ($CategoryType.ordinal() == $article.getCategory.ordinal())-->
+                <!--selected="selected"-->
+                <!--#end-->
+        >
+            $article.getCategory()</option>
+        #end
+    </select>
+
+    <select id="journalist" name="journalist">
+        #foreach( $journalist in $journalists )
+        <option value="$journalist.getId()"
+                #if ($journalist.getId() == $article.getJournalist().getId())
+                selected="selected"
+                #end>
+            $journalist.getName()</option>
+        #end
+    </select>
+
+
+
     <input type="submit" value="Save" class="button">
 </form>
 

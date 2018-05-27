@@ -14,7 +14,10 @@
         <tr>
             <td><a>$article.getHeadline()</a></td>
             <td><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></td>
-            <td><a href="/admin/articles/$article.getId()/delete" class = "button center"> Delete </a></td>
+            <td><form action="/admin/articles/$article.getId()/delete" method="post">
+                <input type="submit" value="Delete" class="button">
+            </form>
+            </td>
         </tr>
         #end
 
