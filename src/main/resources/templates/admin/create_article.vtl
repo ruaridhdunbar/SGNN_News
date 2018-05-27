@@ -1,18 +1,20 @@
 <p class="pageHeader">New Article</p>
 
-<form action="/articles" method="post">
-    <label for="headline">Headline:</label>
+<form action="/admin/articles" method="post">
+    <label>Headline:</label>
     <input class="inputbox" type="text" name="headline" required="true">
 
-    <label for="summary">Summary:</label>
+    <label>Summary:</label>
     <input class="inputbox" type="text" name="summary" required="true">
 
-    <label for="story">Body:</label>
+    <label>Body:</label>
     <input class="inputbox" type="text" name="story" required="true">
 
-    <!--needs to be changed to take enum type-->
-    <label for="story">Category:</label>
-    <input class="select" type="text" name="category" required="true" value="$category.name()">
+    <select name="category" id="category">
+        #foreach($category in $categories)
+        <option value="$category">$category</option>
+        #end
+    </select>
 
     <select id="journalist" name="journalist">
         #foreach( $journalist in $journalists )

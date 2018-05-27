@@ -68,5 +68,8 @@ public class RunnerTest {
         System.out.println(article3.prettyDate());
         System.out.println(journalist1.getId());
 
+        for (CategoryType category : CategoryType.values())
+            System.out.println(category.name());
+
     }
 }
