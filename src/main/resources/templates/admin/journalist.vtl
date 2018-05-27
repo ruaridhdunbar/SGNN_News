@@ -2,9 +2,9 @@
 <p>Welcome $user. Here you can add or remove staff, or update their details.</p>
 
 
-<form action="/journalists" method="post">
+<form action="/admin/journalists" method="post">
     <label for="name">Add a New Journalist:</label>
-    <input class="inputbox" type="text" name="headline" required="true">
+    <input class="inputbox" type="text" name="name" required="true">
     <input type="submit" value="Save" class="button">
 </form>
 
@@ -17,7 +17,11 @@
     <tr>
         <td>$journalist.getName()</td>
         <td><a href="/admin/journalists/$journalist.getId()/edit" class = "button center"> Edit </a></td>
-        <td><a href="/admin/journalists/$journalist.getId()/delete" class = "button center"> Delete </a></td>
+        <td><form action="/admin/journalists/$journalist.getId()/delete" method="post">
+            <input type="submit" value="Delete" class="button">
+        </form>
+        </td>
+
     </tr>
     #end
 

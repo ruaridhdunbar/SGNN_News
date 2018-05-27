@@ -67,6 +67,7 @@ public class AdminController{
             Integer intId = Integer.parseInt(stringId);
             Article article = DBHelper.find(intId, Article.class);
             List<Journalist> journalists = DBHelper.getAll(Journalist.class);
+//            List<CategoryType> categories = DBHelper.getAll(CategoryType.values();
 
             Map<String, Object> model = new HashMap<>();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
@@ -83,14 +84,14 @@ public class AdminController{
         post("/admin/articles/:id", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Article article = DBHelper.find(id, Article.class);
-            int journalistId = Integer.parseInt(req.queryParams("journalist"));
-            Journalist journalist = DBHelper.find(journalistId, Journalist.class);
+//            int journalistId = Integer.parseInt(req.queryParams("journalist"));
+//            Journalist journalist = DBHelper.find(journalistId, Journalist.class);
             article.setHeadline(req.queryParams("headline"));
             article.setSummary(req.queryParams("summary"));
             article.setStory(req.queryParams("story"));
-            int ordinal = Integer.parseInt(req.queryParams("category"));
-            CategoryType category = CategoryType.values()[ordinal];
-            article.setCategory(category);
+//            int ordinal = Integer.parseInt(req.queryParams("category"));
+//            CategoryType category = CategoryType.values()[ordinal];
+//            article.setCategory(category);
 
             DBHelper.save(article);
             res.redirect("/admin/articles");
@@ -99,7 +100,7 @@ public class AdminController{
 
 
         //        DELETE ARTICLE
-        post("/admin/article/:id/delete", (req, res) -> {
+        post("/admin/articles/:id/delete", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Article article = DBHelper.find(id, Article.class);
             DBHelper.delete(article);
@@ -146,6 +147,7 @@ public class AdminController{
             Map<String, Object> model = new HashMap<>();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
             model.put("user", loggedInUser);
+            model.put("journalist", journalist);
             model.put("template", "templates/admin/edit_journalist.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
