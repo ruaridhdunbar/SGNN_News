@@ -19,6 +19,19 @@ public class Seeds {
         Journalist journalist2 = new Journalist("Walter Cronkite");
         DBHelper.save(journalist2);
 
+        Journalist journalist3 = new Journalist("Bob Woodward");
+        DBHelper.save(journalist3);
+
+        Journalist journalist4 = new Journalist("Barbara Walters");
+        DBHelper.save(journalist4);
+
+        Journalist journalist5 = new Journalist("Carl Bernstein");
+        DBHelper.save(journalist5);
+
+        Journalist journalist6 = new Journalist("Gloria Steinem");
+        DBHelper.save(journalist6);
+
+
         Article article1 = new Article(journalist1, "Scotland 'would keep pound' in years after independence", "A long awaited SNP report says the country could later move towards introducing it's own currency.", "Nicola Sturgeon spoke today at the unveiling of a 20-ft solid gold statue of Alex Salmond in which she espoused that Scotland would become the richest country ever mere seconds after independence.", CategoryType.SCOTLAND);
         Calendar cal1 = new GregorianCalendar();
         cal1.set(2018, Calendar.MAY, 20);

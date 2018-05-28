@@ -5,7 +5,6 @@ body {
    background: rgb(171, 205, 239);
    background-size: 100%;
    background-repeat: no-repeat;
-   color: blue;
 }
 
 #top-bar {
@@ -73,3 +72,12 @@ a:hover {
   background-color: cornflowerblue
 }
 
+#page-info {
+ background-color: rgba(248, 245, 236, 0.5);
+ color: black;
+ padding: 10px 20px 10px 10px;
+ text-align: center;
+ margin-top: 1%;
+ margin-left: 33%;
+ margin-right: 33%;
+}
