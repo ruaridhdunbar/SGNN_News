@@ -1,27 +1,27 @@
 body {
-  margin: 0;
-  font-family: verdana, sans-serif;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: 'Tajawal', sans-serif;
 }
 
 #top-bar {
   width: 100%;
-  background-color: navy;
-  height: 45px;
+  background-color: #33698e;
+  height: 100px;
   color: white;
-}
-
-
-#menu {
-    background-color: darkblue;
-    color: #ffffff;
-    padding: 15px;
-    height: 50px;
 }
 
 #logo-div {
 float: left;
+padding-right: 100px;
 }
 
+#logo {
+  padding-top: 15px;
+  height: 70px;
+  padding-left: 70px;
+  padding-right: 10px;
+}
 
 #top-menu ul {
   margin: 0;
@@ -31,9 +31,8 @@ float: left;
 #top-menu li {
   list-style: none;
   font-weight: bold;
-  border-right: 1px solid cornflowerblue;
-  height: 100%;
-  padding: 10px 20px 12px 20px;
+  border-right: 1px solid #22465e;
+  padding: 68px 20px 12px 15px;
   float: left;
 }
 
@@ -42,19 +41,28 @@ float: left;
   color: white;
 }
 
-a:hover {
-  background-color: cornflowerblue;
+#first-list-item {
+  border-left: 1px solid #22465e;
 }
 
 #search-bar-position {
   float: right;
-  padding: 5px 0 0 50px;
+  padding: 50px 30px 0px 50px;
   width: 250px;
+
 }
 
 #search-bar {
-  height: 25px;
-  border: none;
-  padding: 3px;
+  height: 30px;
   padding-left: 10px;
+  width: 120px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+}
+
+button#search-bar-button{
+  width: 60px;
+  height:36px;
+  padding: 1px;
+  font-family: 'Tajawal', sans-serif;
 }

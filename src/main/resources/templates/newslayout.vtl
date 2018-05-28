@@ -9,6 +9,8 @@
     <link href="/style.css" rel="stylesheet" type="text/css"/>
     <link href="/news-layout.css" rel="stylesheet" type="text/css"/>
     <link href="/front-page.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700" rel="stylesheet">
+    <link rel="icon" href="/images/favicon2.png"/>
 
 </head>
 <body>
@@ -16,29 +18,26 @@
 <div id="container">
     <div id="top-bar">
 
+        <div id="top-menu">
             <div id="logo-div">
-                <img src="" alt="">
+                <a href="/news"><img id="logo" src="/images/logo.png"></a>
             </div>
 
-            <div id="top-menu">
-                <ul>
-                    <li><a class="menu-list" href="/news">Home</a></li>
-                    <li><a class="menu-list" href="/articles/newest">All Articles</a></li>
-                    <li><a class="menu-list" href="/articles/most">Most Popular</a></li>
-                    <li><a class="menu-list" href="/articles/fewest">Categories</a></li>
-                    <div id="search-bar-position">
-                        <form action="/news/search-results" method="get" autocomplete="off">
-                            <input id="search-bar" type="text" placeholder="Search..." name="search_bar">
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                </ul>
+            <ul>
+                <li id="first-list-item"><a class="menu-list" href="/news">Home</a></li>
+                <li><a class="menu-list" href="/articles/newest">All Articles</a></li>
+                <li><a class="menu-list" href="/articles/most">Most Popular</a></li>
+                <li><a class="menu-list" href="/articles/fewest">Categories</a></li>
+            </ul>
+            <div id="search-bar-position">
+                <form action="/news/search-results" method="get" autocomplete="off">
+                    <input id="search-bar" type="text" placeholder="Search..." name="search_bar">
+                    <button id="search-bar-button" type="submit">Submit</button>
+                </form>
             </div>
+
+        </div>
     </div>
-</div>
-
-<div id="menu">
-
 </div>
 
 
