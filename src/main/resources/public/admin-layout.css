@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: Helvetica;
+  font-size: 18px;
+   background: rgb(171, 205, 239);
+   background-size: 100%;
+   background-repeat: no-repeat;
+   color: blue;
+}
+
+#top-bar {
+  width: 100%;
+  background-color: navy;
+  height: 45px;
+  color: white;
+}
+
+#logo-div {
+float: left;
+}
+
+
+#top-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#user {
+    float: right;
+}
+
+#log-out {
+    float: right;
+
+}
+
+#log-out a {
+ color: black;
+}
+
+#button-menu a {
+    color: #f2f2f2;
+}
+
+#button {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+    padding: 0px 5px 0px 5px;
+}
+
+
+#top-menu li {
+  list-style: none;
+  font-weight: bold;
+  border-right: 1px solid cornflowerblue;
+  height: 100%;
+  padding: 10px 20px 12px 20px;
+  float: left;
+}
+
+#top-menu a {
+    text-decoration: none;
+}
+
+.menu-list {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  background-color: cornflowerblue
+}

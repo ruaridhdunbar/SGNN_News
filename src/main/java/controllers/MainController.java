@@ -41,7 +41,7 @@ public class MainController {
             model.put("user", loggedInUser);
             model.put("template", "templates/admin/index.vtl");
 
-            return new ModelAndView(model, "templates/newslayout.vtl");
+            return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
     }
