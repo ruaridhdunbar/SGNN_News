@@ -20,7 +20,6 @@ float: left;
 }
 
 #top-menu {
-  float: left;
 }
 
 #top-menu ul {
@@ -42,15 +41,19 @@ float: left;
   color: white;
 }
 
-#search-bar {
-  float: left;
-  padding: 5px 0 0 150px;
+a:hover {
+  background-color: cornflowerblue;
 }
 
-#search-bar input {
+#search-bar-position {
+  float: right;
+  padding: 5px 0 0 50px;
+  width: 150px;
+}
+
+#search-bar {
   height: 25px;
   border: none;
   padding: 3px;
   padding-left: 10px;
-  background-repeat: no-repeat;
 }

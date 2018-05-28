@@ -27,7 +27,7 @@ public class ArticleController {
             List<Article> articles = DBHelper.orderByDateCreatedNewestFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_by_newest_first.vtl");
+            model.put("template", "templates/articles/index_all_articles.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
@@ -36,7 +36,7 @@ public class ArticleController {
             List<Article> articles = DBHelper.orderByDateCreatedOldestFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_by_oldest_first.vtl");
+            model.put("template", "templates/articles/index_all_articles.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
@@ -45,7 +45,7 @@ public class ArticleController {
             List<Article> articles = DBHelper.orderByPageViewsMostFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_by_most_number_of_views.vtl");
+            model.put("template", "templates/articles/index_all_articles.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
@@ -54,7 +54,7 @@ public class ArticleController {
             List<Article> articles = DBHelper.orderByPageViewsFewestFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_by_least_number_of_views.vtl");
+            model.put("template", "templates/articles/index_all_articles.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
