@@ -1,46 +1,59 @@
-<div id="box1">
-    <div id="story1">
-        <div id="image">
-            <img src="images/placeholder.jpg">
+<div class="container">
+    <div class="box item1">
+        <div>
+        <img id="lead-image" src="images/placeholder.jpg">
         </div>
-        <div id="hl&S1">
-            <p>$articles.get(0).getHeadline()</p>
-            <p>$articles.get(0).getSummary()</p>
-            <p><a href="/articles/$articles.get(0).getId()">read more...</a></p>
+        <div class="lead-story">
+            <h1><a href="/articles/$articles.get(0).getId()">$articles.get(0).getHeadline()</a></h1>
+            <p><a href="/articles/$articles.get(0).getId()">$articles.get(0).getSummary()</a></p>
         </div>
     </div>
-</div>
-
-<div id="box2">
-    <div id="story2">
-        <p>$articles.get(1).getHeadline()</p>
+    <div class="box item2">
+        <h2>$articles.get(1).getHeadline()</h2>
         <p>$articles.get(1).getSummary()</p>
         <p><a href="/articles/$articles.get(1).getId()">read more...</a></p>
-    </div>
 
-    <div id="story3">
-        <p>$articles.get(2).getHeadline()</p>
+        <h2>$articles.get(2).getHeadline()</h2>
         <p>$articles.get(2).getSummary()</p>
         <p><a href="/articles/$articles.get(2).getId()">read more...</a></p>
     </div>
+
+    <div class="box item3">
+
+        <div class="news-story">
+            <h2>$articles.get(3).getHeadline()</h2>
+            <p>$articles.get(3).getSummary()</p>
+            <p><a href="/articles/$articles.get(3).getId()">read more...</a></p>
+        </div>
+
+        <div class="news-story">
+            <h2>$articles.get(4).getHeadline()</h2>
+            <p>$articles.get(4).getSummary()</p>
+            <p><a href="/articles/$articles.get(4).getId()">read more...</a></p>
+        </div>
+
+        <div class="news-story">
+            <h2>$articles.get(5).getHeadline()</h2>
+            <p>$articles.get(5).getSummary()</p>
+            <p><a href="/articles/$articles.get(5).getId()">read more...</a></p>
+        </div>
+    </div>
+
 </div>
+
+
 
 <div id="box3">
     <div id="story4">
-        <p>$articles.get(3).getHeadline()</p>
-        <p>$articles.get(3).getSummary()</p>
-        <p><a href="/articles/$articles.get(3).getId()">read more...</a></p>
+
     </div>
 
     <div id="story5">
-        <p>$articles.get(4).getHeadline()</p>
-        <p>$articles.get(4).getSummary()</p>
-        <p><a href="/articles/$articles.get(4).getId()">read more...</a></p>
+
     </div>
 
     <div id="story6">
-        <p>$articles.get(5).getHeadline()</p>
-        <p>$articles.get(5).getSummary()</p>
-        <p><a href="/articles/$articles.get(5).getId()">read more...</a></p>
+
     </div>
+</div>
 </div>
