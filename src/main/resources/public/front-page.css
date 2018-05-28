@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 70% 30%;
+  height: 600px;
+}
+
+.box {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.item3 {
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.news-story {
+  margin: 5px;
+  background-color: navy;
+  text-decoration: none;
+}
+
+#lead-image {
+  height: 235px;
+  width: 235px;
+  padding-left: 10px;
+}

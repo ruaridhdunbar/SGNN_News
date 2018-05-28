@@ -5,22 +5,23 @@ body {
 
 #top-bar {
   width: 100%;
-  background-color: midnightblue;
+  background-color: navy;
   height: 45px;
   color: white;
 }
 
-.fixed-width {
-  width: 1050px;
-  margin: 0 auto;
+
+#menu {
+    background-color: darkblue;
+    color: #ffffff;
+    padding: 15px;
+    height: 50px;
 }
 
 #logo-div {
 float: left;
 }
 
-#top-menu {
-}
 
 #top-menu ul {
   margin: 0;
@@ -48,7 +49,7 @@ a:hover {
 #search-bar-position {
   float: right;
   padding: 5px 0 0 50px;
-  width: 150px;
+  width: 250px;
 }
 
 #search-bar {
