@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: verdana, sans-serif;
+}
+
+#top-bar {
+  width: 100%;
+  background-color: midnightblue;
+  height: 45px;
+  color: white;
+}
+
+.fixed-width {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+#logo-div {
+float: left;
+}
+
+#top-menu {
+  float: left;
+}
+
+#top-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#top-menu li {
+  list-style: none;
+  font-weight: bold;
+  border-right: 1px solid cornflowerblue;
+  height: 100%;
+  padding: 10px 20px 12px 20px;
+  float: left;
+}
+
+.menu-list {
+  text-decoration: none;
+  color: white;
+}
+
+#search-bar {
+  float: left;
+  padding: 5px 0 0 150px;
+}
+
+#search-bar input {
+  height: 25px;
+  border: none;
+  padding: 3px;
+  padding-left: 10px;
+  background-repeat: no-repeat;
+}
