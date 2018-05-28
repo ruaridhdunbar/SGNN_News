@@ -14,7 +14,6 @@
 
 <div id="container">
     <div id="top-bar">
-        <div class="fixed-width">
 
             <div id="logo-div">
                 <img src="" alt="">
@@ -26,17 +25,20 @@
                     <li><a class="menu-list" href="/articles/newest">All Articles</a></li>
                     <li><a class="menu-list" href="/articles/most">Most Popular</a></li>
                     <li><a class="menu-list" href="/articles/fewest">Categories</a></li>
+                    <div id="search-bar-position">
+                        <form action="/news/search-results" method="get" autocomplete="off">
+                            <input id="search-bar" type="text" placeholder="Search..." name="search_bar">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
                 </ul>
             </div>
 
-            <div id="search-bar">
-                <input type="text">
 
-            </div>
 
-        </div>
     </div>
 </div>
+
 
 <div class="parsed-data">
     #parse( $template )
