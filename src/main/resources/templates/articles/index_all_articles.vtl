@@ -1,3 +1,43 @@
+<div class="container">
+
+    <div class="box item1">
+
+        <div id="story-1">
+            <h1 class="headline"><a class="news-link" href="/articles/$articles.get(0).getId()">$articles.get(0).getHeadline()</a>
+            </h1>
+            <div class="article-data">
+                <p class="article-date">$articles.get(0).prettyDate()</p>
+            </div>
+            <p><a class="news-link" href="/articles/$articles.get(0).getId()">$articles.get(0).getSummary()</a></p>
+            <div class="article-data">
+                <p class="article-category">$articles.get(0).getCategory()</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box item2">
+
+        <div id="story-2">
+            <h2 class="headline"><a class="news-link" href="/articles/$articles.get(1).getId()">$articles.get(1).getHeadline()</a>
+            </h2>
+            <div class="article-data">
+                <p class="article-date">$articles.get(1).prettyDate()</p>
+            </div>
+            <p><a class="news-link" href="/articles/$articles.get(1).getId()">$articles.get(1).getSummary()</a></p>
+        </div>
+
+        <div id="story-3">
+            <h2 class="headline"><a class="news-link" href="/articles/$articles.get(2).getId()">$articles.get(2).getHeadline()</a>
+            </h2>
+            <div class="article-data">
+                <p class="article-date">$articles.get(2).prettyDate()</p>
+            </div>
+            <p><a class="news-link" href="/articles/$articles.get(2).getId()">$articles.get(2).getSummary()</a></p>
+        </div>
+
+    </div>
+</div>
+
 #foreach ($article in $articles)
 <p><a href="/articles/$article.getId()">$article.getHeadline()</a></p>
 <p>$article.getSummary()</p>

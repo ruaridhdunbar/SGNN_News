@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SGNN News</title>
     <link href="/style.css" rel="stylesheet" type="text/css"/>
-    <link href="/news-layout.css" rel="stylesheet" type="text/css"/>
-    <link href="/front-page.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-navbar.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-front-page.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-ticker-tape.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-all-articles.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700" rel="stylesheet">
     <link rel="icon" href="/images/favicon2.png"/>
 
@@ -29,6 +31,7 @@
                 <li><a class="menu-list" href="/articles/most">Most Popular</a></li>
                 <li><a class="menu-list" href="/articles/fewest">Categories</a></li>
             </ul>
+
             <div id="search-bar-position">
                 <form action="/news/search-results" method="get" autocomplete="off">
                     <input id="search-bar" type="text" placeholder="Search..." name="search_bar">
@@ -36,6 +39,13 @@
                 </form>
             </div>
 
+        </div>
+    </div>
+    <div class="ticker-wrap">
+        <div class="ticker">
+            #foreach ($article in $articles)
+            <div class="ticker__item"><a class="ticker-item-link" href="/articles/$article.getId()">$article.getHeadline(). &nbsp &nbsp </a></div>
+             #end
         </div>
     </div>
 </div>
