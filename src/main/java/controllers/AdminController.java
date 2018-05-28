@@ -7,9 +7,7 @@ import models.Journalist;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -39,7 +37,9 @@ public class AdminController{
         get("/admin/articles/new", (req, res) -> {
             List<Journalist> journalists = DBHelper.getAll(Journalist.class);
             HashMap<String, Object> model = new HashMap<>();
-            model.put("journalist", journalists);
+            Set<CategoryType> categories = EnumSet.allOf(CategoryType.class);
+            model.put("categories", categories);
+            model.put("journalists", journalists);
             model.put("template", "templates/admin/create_article.vtl");
             return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
@@ -51,8 +51,7 @@ public class AdminController{
             String headline = req.queryParams("headline");
             String summary = req.queryParams("summary");
             String story = req.queryParams("story");
-            int ordinal = Integer.parseInt(req.queryParams("category"));
-            CategoryType category = CategoryType.values()[ordinal];
+            CategoryType category = CategoryType.valueOf(req.queryParams("category"));
 
             Article newArticle = new Article(journalist, headline, summary, story, category);
 
@@ -67,15 +66,14 @@ public class AdminController{
             Integer intId = Integer.parseInt(stringId);
             Article article = DBHelper.find(intId, Article.class);
             List<Journalist> journalists = DBHelper.getAll(Journalist.class);
-//            List<CategoryType> categories = DBHelper.getAll(CategoryType.values();
-
+            Set<CategoryType> categories = EnumSet.allOf(CategoryType.class);
             Map<String, Object> model = new HashMap<>();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            model.put("categories", categories);
             model.put("user", loggedInUser);
             model.put("journalists", journalists);
             model.put("template", "templates/admin/edit_article.vtl");
             model.put("article", article);
-
             return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
@@ -84,14 +82,14 @@ public class AdminController{
         post("/admin/articles/:id", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
             Article article = DBHelper.find(id, Article.class);
-//            int journalistId = Integer.parseInt(req.queryParams("journalist"));
-//            Journalist journalist = DBHelper.find(journalistId, Journalist.class);
+            int journalistId = Integer.parseInt(req.queryParams("journalist"));
+            Journalist journalist = DBHelper.find(journalistId, Journalist.class);
             article.setHeadline(req.queryParams("headline"));
             article.setSummary(req.queryParams("summary"));
             article.setStory(req.queryParams("story"));
-//            int ordinal = Integer.parseInt(req.queryParams("category"));
-//            CategoryType category = CategoryType.values()[ordinal];
-//            article.setCategory(category);
+            article.setJournalist(journalist);
+            CategoryType category = CategoryType.valueOf(req.queryParams("category"));
+            article.setCategory(category);
 
             DBHelper.save(article);
             res.redirect("/admin/articles");
@@ -120,13 +118,6 @@ public class AdminController{
             return new ModelAndView(model, "templates/adminlayout.vtl");
         }, new VelocityTemplateEngine());
 
-//        //          NEW JOURNALIST
-//        get("/admin/journalists/new", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            String loggedInUser = LoginController.getLoggedInUserName(req, res);
-//            model.put("user", loggedInUser);
-//            return new ModelAndView(model, "templates/layout.vtl");
-//        }, new VelocityTemplateEngine());
 
         //        CREATE JOURNALIST
         post("/admin/journalists", (req, res) -> {
