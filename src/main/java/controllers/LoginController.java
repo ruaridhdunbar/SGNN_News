@@ -1,5 +1,6 @@
 package controllers;
 
+import models.UsernameList;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -12,6 +13,8 @@ import static spark.Spark.get;
 import static spark.Spark.post;
 
 public class LoginController {
+
+
     public LoginController() {
         this.setupEndpoints();
     }
@@ -25,6 +28,7 @@ public class LoginController {
 
         post("/login", (req, res) -> {
             String username = req.queryParams("username");
+            username = LoginController.checkUserName(username);
             req.session().attribute("username", username);
             res.redirect("/admin");
             return null;
@@ -43,5 +47,13 @@ public class LoginController {
             res.redirect("/login");
         }
         return username;
+    }
+
+    public static String checkUserName(String name) {
+        UsernameList usernames = new UsernameList();
+        if(usernames.checkUsername(name)) {
+            return name;
+        }
+        return null;
     }
 }
