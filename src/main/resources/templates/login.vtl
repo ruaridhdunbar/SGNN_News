@@ -1,6 +1,28 @@
-<form action="/login" method="post">
-    <label for="username">Username</label>
-        <input id="username" name="username" type="text">
+<!doctype html>
+<html lang="en">
 
-    <button type="submit">Log In</button>
-</form>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SGNN News</title>
+    <link href="/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/login-layout.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div id="login">
+    <div class="image"></div>​
+    <form action="/login" method="post">
+        <div class = "username">
+        <label for="username"></label>
+        <input id="username" placeholder="Enter Username" name="username" type="text">
+        </div>
+        <div class = "button">
+        <button type="submit">Log In</button>
+        </div>
+    </form>
+</div>
+</body>

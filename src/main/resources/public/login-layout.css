@@ -1,0 +1,49 @@
+div.image {
+   content:url(https://myslu.slu.edu/res/images/cas-padlock-icon.png);
+   width: 120px;
+   height: 120px;
+   position: relative;
+   top: -15px;
+   left:-30px;
+   float: left;
+   margin: 10px;
+}​
+
+input[type=text] {
+    display: inline-block;
+    position: center;
+    border: 1px solid #ccc;
+}
+
+input#username{
+  width: 287px;
+  padding: 12px 20px;
+  margin: 3px 0
+}
+
+
+
+button {
+    width: 333px;
+    padding: 14px 20px;
+    margin: 3px 0;
+    background-color: cornflowerblue;
+    position: center;
+    color: white;
+    cursor: pointer;
+
+}
+
+body {
+  background: rgb(171, 205, 239);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: blue;
+}
+
+#login{
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    padding-right: 30px;
+}
