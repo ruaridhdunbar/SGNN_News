@@ -3,26 +3,29 @@
 
 
 <form action="/admin/journalists" method="post">
-    <label for="name">Add a New Journalist:</label>
+    <label>Add a New Journalist:</label>
     <input class="inputbox" type="text" name="name" required="true">
     <input type="submit" value="Save" class="button">
 </form>
 
-<table>
-    <tr>
-        <th>SGNN Journalists (A-Z)</th>
-    </tr>
+<div id="admin-table">
 
-    #foreach($journalist in $journalists)
-    <tr>
-        <td>$journalist.getName()</td>
-        <td><a href="/admin/journalists/$journalist.getId()/edit" class = "button center"> Edit </a></td>
-        <td><form action="/admin/journalists/$journalist.getId()/delete" method="post">
-            <input type="submit" value="Delete" class="button">
-        </form>
-        </td>
+    <table id = "journalists">
+        <tr>
+            <th>SGNN Journalists (A-Z)</th>
+        </tr>
 
-    </tr>
-    #end
+        #foreach($journalist in $journalists)
+        <tr>
+            <td>$journalist.getName()</td>
+            <td><a href="/admin/journalists/$journalist.getId()/edit" class = "button center"> Edit </a></td>
+            <td><form action="/admin/journalists/$journalist.getId()/delete" method="post">
+                <input type="submit" value="Delete" class="button">
+            </form>
+            </td>
 
-</table>
+        </tr>
+        #end
+
+    </table>
+</div>

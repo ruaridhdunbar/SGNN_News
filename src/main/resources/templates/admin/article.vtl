@@ -1,19 +1,18 @@
 <p class="pageHeader">SGNN News Website Administration </p>
 <p>Here you can create, edit or remove articles.</p>
 
+<a href="/admin/articles/new" class = "button center"> Add a New Article </a>
 
-<div class="admin/article">
+<div id="admin-table">
 
-    <a href="/admin/articles/new" class = "button center"> Add a New Article </a>
-
-    <table>
+    <table id = "articles">
         <tr>
             <th>SGNN Articles</th>
         </tr>
 
         #foreach($article in $articles)
         <tr>
-            <td><a>$article.getHeadline()</a></td>
+            <td>$article.getHeadline()</td>
             <td><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></td>
             <td><form action="/admin/articles/$article.getId()/delete" method="post">
                 <input type="submit" value="Delete" class="button">
