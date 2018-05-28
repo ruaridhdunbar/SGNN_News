@@ -32,7 +32,7 @@ public class LoginController {
 
         get ("/logout", (req, res) -> {
             req.session().removeAttribute("username");
-            res.redirect("/");
+            res.redirect("/admin");
             return null;
         }, new VelocityTemplateEngine());
     }
