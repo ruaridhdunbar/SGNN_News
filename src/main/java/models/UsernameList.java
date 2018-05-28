@@ -5,24 +5,39 @@ import java.util.Set;
 
 public class UsernameList {
 
-    private Set<String> users;
+    private Set<String> editors;
+    private Set<String> journalists;
 
     public UsernameList() {
-        this.users = new HashSet<>();
-        users.add("Editor");
-        users.add("Journalist");
+        this.editors = new HashSet<>();
+        this.journalists = new HashSet<>();
+        editors.add("RDunbar");
+        editors.add("BCooke");
+        journalists.add("WCronkite");
+        journalists.add("HThompson");
     }
 
-    public Set<String> getUsernames() {
-        return users;
+    public Set<String> getEditors() {
+        return editors;
     }
 
-    public void setUsernames(Set<String> usernames) {
-        this.users = usernames;
+    public void setEditors(Set<String> editors) {
+        this.editors = editors;
+    }
+
+    public Set<String> getJournalists() {
+        return journalists;
+    }
+
+    public void setJournalists(Set<String> journalists) {
+        this.journalists = journalists;
     }
 
     public boolean checkUsername(String name){
-        for (String user : this.users){
+        HashSet<String> combined = new HashSet<>();
+        combined.addAll(journalists);
+        combined.addAll(editors);
+        for (String user : combined){
             if (user.contains(name)){
                 return true;
             }
