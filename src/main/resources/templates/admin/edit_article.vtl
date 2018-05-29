@@ -1,18 +1,18 @@
-<div id = "page-info">Edit Article</div>
-
 <form action="/admin/articles/$article.getId()" method="post">
 
+    <div id = "page-info">Headline</div>
     <div id = "edit-headline">
-        <label>Headline:</label>
-        <textarea name="headline" required rows="1" cols ="100">$article.getHeadline()</textarea>
+        <textarea name="headline" required rows="1" cols ="150">$article.getHeadline()</textarea>
     </div>
+
+    <div id = "page-info">Summary</div>
     <div id = "edit-summary">
-        <label>Summary:</label>
         <textarea name="summary" required rows="1" cols="150">$article.getSummary()</textarea>
     </div>
+
+    <div id = "page-info">Body</div>
     <div id = "edit-body">
-        <label>Body:</label>
-        <textarea name="story" required rows="5" cols="180">$article.getStory()</textarea>
+        <textarea name="story" required rows="5" cols="150">$article.getStory()</textarea>
     </div>
     
     <label>ImageURL:</label>
