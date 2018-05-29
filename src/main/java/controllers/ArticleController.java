@@ -53,16 +53,31 @@ public class ArticleController {
 
         //        SHOW CATEGORIES MAIN PAGE (DEFAULT TO SCOTLAND)
         get("/articles/categories", (req, res) -> {
-//            CategoryType category = CategoryType.valueOf(req.params("category"));
-            List<Article> articles = DBHelper.findByCategoryNewestFirst(CategoryType.SCOTLAND);
+            List<Article> categoryArticles = DBHelper.findByCategoryNewestFirst(CategoryType.SCOTLAND);
+            List<Article> articles = DBHelper.getAll(Article.class);
             HashMap<String, Object> model = new HashMap<>();
             Set<CategoryType> categories = EnumSet.allOf(CategoryType.class);
+            model.put("categoryArticles", categoryArticles);
             model.put("categories", categories);
             model.put("articles", articles);
             model.put("template", "templates/articles/all-categories.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
+
+        //        SHOW CATEGORIES ARTICLES
+        get("/articles/categories/:category", (req, res) -> {
+            CategoryType category = CategoryType.valueOf(req.params("category"));
+            List<Article> categoryArticles = DBHelper.findByCategoryNewestFirst(category);
+            List<Article> articles = DBHelper.getAll(Article.class);
+            HashMap<String, Object> model = new HashMap<>();
+            Set<CategoryType> categories = EnumSet.allOf(CategoryType.class);
+            model.put("categoryArticles", categoryArticles);
+            model.put("categories", categories);
+            model.put("articles", articles);
+            model.put("template", "templates/articles/all-categories.vtl");
+            return new ModelAndView(model, "templates/newslayout.vtl");
+        }, new VelocityTemplateEngine());
 
         //        SHOW
         get("/articles/:id", (req, res) -> {
