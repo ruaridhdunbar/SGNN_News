@@ -14,6 +14,9 @@
         <label>Body:</label>
         <textarea name="story" required rows="5" cols="180">$article.getStory()</textarea>
     </div>
+    
+    <label>ImageURL:</label>
+    <input class="inputbox" type="text" name="imageURL" required="true" value="$article.getImageURL()">
 
     <select name="category" id="category">
         #foreach($category in $categories)

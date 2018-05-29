@@ -1,0 +1,25 @@
+.articles-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 25% 25% 25%;
+  height: 525px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.article {
+  color: black;
+  background-color: grey;
+}
+
+.article item1 {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+}
+
+
+.article item2 {
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  height: 200px;
+}

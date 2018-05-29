@@ -30,7 +30,7 @@ public class MainController {
             Map<String, Object> model = new HashMap<>();
             List<Article> articles = DBHelper.orderByDateCreatedNewestFirst();
             model.put("articles", articles);
-            model.put("template", "templates/main.vtl");
+            model.put("template", "templates/front-page.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 

@@ -21,11 +21,12 @@ public class Article {
     private Calendar dateCreated;
     private CategoryType category;
     private int pageViews;
+    private String imageURL;
 
     public Article() {
     }
 
-    public Article(Journalist journalist, String headline, String summary, String story, CategoryType category) {
+    public Article(Journalist journalist, String headline, String summary, String story, CategoryType category, String url) {
         this.journalist = journalist;
         this.headline = headline;
         this.summary = summary;
@@ -33,6 +34,7 @@ public class Article {
         this.dateCreated = GregorianCalendar.getInstance();
         this.category = category;
         this.pageViews = 0;
+        this.imageURL = url;
     }
 
     @Id
@@ -109,6 +111,14 @@ public class Article {
 
     public void setPageViews(int pageViews) {
         this.pageViews = pageViews;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public void addToPageViews() {
