@@ -1,32 +1,49 @@
-<p class="pageHeader">New Article</p>
-
 <form action="/admin/articles" method="post">
-    <label>Headline:</label>
-    <input class="inputbox" type="text" name="headline" required="true">
 
-    <label>Summary:</label>
-    <input class="inputbox" type="text" name="summary" required="true">
 
-    <label>Body:</label>
-    <input class="inputbox" type="text" name="story" required="true">
+    <div id = "page-info">Headline</div>
+    <div id = "edit-headline">
+        <textarea name="headline" required rows="1" cols ="150"></textarea>
+    </div>
 
-    <label>ImageURL:</label>
-    <input class="inputbox" type="text" name="imageURL" required="true">
+    <div id = "page-info">Summary</div>
+    <div id = "edit-summary">
+        <textarea name="summary" required rows="1" cols="150"></textarea>
+    </div>
 
-    <select name="category" id="category">
-        #foreach($category in $categories)
-        <option value="$category">$category</option>
-        #end
-    </select>
+    <div id = "page-info">Body</div>
+    <div id = "edit-body">
+        <textarea name="story" required rows="5" cols="150"></textarea>
+    </div>
 
-    <select id="journalist" name="journalist">
-        #foreach( $journalist in $journalists )
-        <option value="$journalist.getId()">$journalist.getName()</option>
-        #end
-    </select>
+
+    <div id = "page-info">ImageURL:</div>
+    <div id = "edit-image">
+        <input class="inputbox" type="text" name="imageURL" required="true">
+    </div>
+
+    <div id ="select-options">
+
+        <div class ="option-1">
+            <select name="category" id="category">
+                #foreach($category in $categories)
+                <option value="$category">$category</option>
+                #end
+            </select>
+        </div>
+
+        <div class ="option-2">
+            <select id="journalist" name="journalist">
+                #foreach( $journalist in $journalists )
+                <option value="$journalist.getId()">$journalist.getName()</option>
+                #end
+            </select>
+        </div>
+    </div>
 
     <input type="submit" value="Save" class="button">
 
 </form>
 
-<a href="/admin/articles" class="button center">Cancel</a>
+<form action = "/admin/articles" method = "get"><input type="submit" value="Cancel" class="button"></form>
+

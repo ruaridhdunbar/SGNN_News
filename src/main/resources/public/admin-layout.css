@@ -132,26 +132,33 @@ padding-right: 100px;
 #edit-body{
     display: flex;
     justify-content: center;
-
-
 }
 
-#edit-headline input{
+#edit-image{
+    display: flex;
+    justify-content: center;
+}
+
+#edit-image input{
     min-height: 10px;
-    min-width: 60%;
+    min-width: 88%;
 }
 
-#edit-summary input{
-    min-height: 10px;
-    min-width: 80%;
-}
-
-#edit-body input{
-    min-height: 300px;
-    min-width: 80%;
-}
 
 li#logout-list {
     padding-bottom: 9px;
 }
 
+#select-options{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+div.option-1{
+    margin-right: 10px;
+}
+
+textarea {
+    resize: vertical;
+}

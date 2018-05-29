@@ -14,8 +14,8 @@
         #foreach($article in $articles)
         <tr>
             <td>$article.getHeadline()</td>
-            <td><div id = "admin-button"><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></div></td>
-            <td><div id = "admin-button"><form action="/admin/articles/$article.getId()/delete" method="post">
+            <td><form action = "/admin/articles/$article.getId()/edit" method="get"><input type="submit" value="Edit" class="button"></form></td>
+            <td><form action="/admin/articles/$article.getId()/delete" method="post">
                 <input type="submit" value="Delete" class="button">
             </form>
             </div>
