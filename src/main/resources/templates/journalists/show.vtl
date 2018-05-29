@@ -1,11 +1,19 @@
-<div class="journalist-articles">
+<p id="journalist-name">$journalist.getName()</p>
 
-    <p>$journalist.getName()</p>
+<div class="article-container">
 
     #foreach ($article in $articles)
-    <p><a href="/articles/$article.getId()">$article.getHeadline()</a></p>
-    <p>$article.prettyDate()</p>
-    <p>$article.getSummary()</p>
-    <p>$article.getStory()</p>
+    <div class="all-articles">
+        <h2 class="headline"><a class="news-link" href="/articles/$article.getId()">$article.getHeadline()</a>
+        </h2>
+        <div class="article-data">
+            <p class="article-date">$article.prettyDate()</p>
+        </div>
+        <p><a class="news-link" href="/articles/$article.getId()">$article.getSummary()</a></p>
+        <div class="article-data">
+            <p class="article-category">$article.getCategory()</p>
+        </div>
+    </div>
     #end
+
 </div>
