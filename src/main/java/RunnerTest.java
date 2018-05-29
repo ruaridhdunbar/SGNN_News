@@ -35,7 +35,7 @@ public class RunnerTest {
         DBHelper.save(article2);
 
         Article article3 = new Article(journalist2, "War with Russia is imminent", "Get indoors now because its about to go off", "War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.UK, "images/putin.jpg");
-        article1.setPageViews(10);
+        article1.setPageViews(37);
         DBHelper.save(article3);
 
         Article article4 = new Article(journalist2, "Upul's Trumpet Store posts record profits", "As new stores open in New York, London and Tokyo, 'Upul's Trumpet Store posts record profits of £450 million","War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.UK, "https://media.wwbw.com/is/image/MMGS7/BTR-300-Series-Student-Bb-Trumpet-Lacquer/463683000420000-00-500x500.jpg");
