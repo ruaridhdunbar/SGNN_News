@@ -1,16 +1,19 @@
-<p class="pageHeader">Edit Article</p>
+<div id = "page-info">Edit Article</div>
 
 <form action="/admin/articles/$article.getId()" method="post">
 
-    <label>Headline:</label>
-    <input class="inputbox" type="text" name="headline" required="true" value="$article.getHeadline()">
-
-    <label>Summary:</label>
-    <input class="inputbox" type="text" name="summary" required="true" value="$article.getSummary()">
-
-    <label>Body:</label>
-    <input class="inputbox" type="text" name="story" required="true" value="$article.getStory()">
-
+    <div id = "edit-headline">
+        <label>Headline:</label>
+        <textarea name="headline" required rows="1" cols ="100">$article.getHeadline()</textarea>
+    </div>
+    <div id = "edit-summary">
+        <label>Summary:</label>
+        <textarea name="summary" required rows="1" cols="150">$article.getSummary()</textarea>
+    </div>
+    <div id = "edit-body">
+        <label>Body:</label>
+        <textarea name="story" required rows="5" cols="180">$article.getStory()</textarea>
+    </div>
 
     <select name="category" id="category">
         #foreach($category in $categories)

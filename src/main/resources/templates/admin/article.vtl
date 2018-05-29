@@ -1,10 +1,11 @@
 <div id = "page-info">SGNN News Website Administration
     <p>Here you can create, edit or remove articles.</div>
 
-<a href="/admin/articles/new" class = "button center"> Add a New Article </a>
+<div id = "admin-create">
+    <div id = "button"><a href="/admin/articles/new"> Add a New Article </a></div>
+</div>
 
 <div id="admin-table">
-
     <table id = "articles">
         <tr>
             <th>SGNN Articles</th>
@@ -13,10 +14,11 @@
         #foreach($article in $articles)
         <tr>
             <td>$article.getHeadline()</td>
-            <td><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></td>
-            <td><form action="/admin/articles/$article.getId()/delete" method="post">
+            <td><div id = "admin-button"><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></div></td>
+            <td><div id = "admin-button"><form action="/admin/articles/$article.getId()/delete" method="post">
                 <input type="submit" value="Delete" class="button">
             </form>
+            </div>
             </td>
         </tr>
         #end
