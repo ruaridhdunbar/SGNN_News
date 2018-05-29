@@ -7,8 +7,10 @@ import models.Journalist;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 
 import static spark.Spark.get;
@@ -23,58 +25,41 @@ public class ArticleController {
     private void setupEndPoints() {
 
         //        INDEX ALL ARTICLES BY NEWEST FIRST
-        get("/articles/newest", (req, res) -> {
+        get("/articles/newest-articles", (req, res) -> {
             List<Article> articles = DBHelper.orderByDateCreatedNewestFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_all_articles.vtl");
+            model.put("template", "templates/articles/all-articles-newest.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
         //        INDEX ALL ARTICLES BY OLDEST FIRST
-        get("/articles/oldest", (req, res) -> {
+        get("/articles/oldest-articles", (req, res) -> {
             List<Article> articles = DBHelper.orderByDateCreatedOldestFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_all_articles.vtl");
+            model.put("template", "templates/articles/all-articles-oldest.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
         //        INDEX ALL ARTICLES BY MOST NUMBER OF VIEWS
-        get("/articles/most", (req, res) -> {
+        get("/articles/most-popular", (req, res) -> {
             List<Article> articles = DBHelper.orderByPageViewsMostFirst();
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_all_articles.vtl");
+            model.put("template", "templates/articles/all-articles-most-popular.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
-        //        INDEX ALL ARTICLES BY FEWEST NUMBER OF VIEWS
-        get("/articles/fewest", (req, res) -> {
-            List<Article> articles = DBHelper.orderByPageViewsFewestFirst();
+        //        SHOW CATEGORIES MAIN PAGE (DEFAULT TO SCOTLAND)
+        get("/articles/categories", (req, res) -> {
+//            CategoryType category = CategoryType.valueOf(req.params("category"));
+            List<Article> articles = DBHelper.findByCategoryNewestFirst(CategoryType.SCOTLAND);
             HashMap<String, Object> model = new HashMap<>();
+            Set<CategoryType> categories = EnumSet.allOf(CategoryType.class);
+            model.put("categories", categories);
             model.put("articles", articles);
-            model.put("template", "templates/articles/index_all_articles.vtl");
-            return new ModelAndView(model, "templates/newslayout.vtl");
-        }, new VelocityTemplateEngine());
-
-        //        FILTER ARTICLES BY CATEGORY - NEWEST FIRST
-        get("/articles/:category/newest", (req, res) -> {
-            CategoryType category = CategoryType.valueOf(req.params("category"));
-            List<Article> articles = DBHelper.findByCategoryNewestFirst(category);
-            HashMap<String, Object> model = new HashMap<>();
-            model.put("articles", articles);
-            model.put("template", "templates/articles/filter_by_category_newest_first.vtl");
-            return new ModelAndView(model, "templates/newslayout.vtl");
-        }, new VelocityTemplateEngine());
-
-        //        FILTER ARTICLES BY CATEGORY - OLDEST FIRST
-        get("/articles/:category/oldest", (req, res) -> {
-            CategoryType category = CategoryType.valueOf(req.params("category"));
-            List<Article> articles = DBHelper.findByCategoryOldestFirst(category);
-            HashMap<String, Object> model = new HashMap<>();
-            model.put("articles", articles);
-            model.put("template", "templates/articles/filter_by_category_oldest_first.vtl");
+            model.put("template", "templates/articles/all-categories.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
