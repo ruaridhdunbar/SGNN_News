@@ -7,18 +7,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SGNN News</title>
+    <title>SGNN Admin Portal</title>
     <link href="/style.css" rel="stylesheet" type="text/css" />
     <link href="/admin-layout.css" rel="stylesheet" type="text/css" />
+    <link href="/admin-table.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-<a href="/admin">Home</a>
-<a href="/admin/articles">All Articles</a>
-<a href="/admin/journalists">All Journalists</a>
-    <div class="container">
-        #parse( $template )
+<div id="container">
+    <div id="top-bar">
+
+        <div id="logo-div">
+            <img src="" alt="">
+        </div>
+
+        <div id="top-menu">
+            <ul>
+                <div id ="button-menu">
+                    <li><a href="/admin">Home</a></li>
+                    <li><a href="/admin/articles">View Articles</a></li>
+                    <li><a href="/admin/journalists">View Journalists</a></li>
+                </div>
+                <div id = "user"><li>$user</li></div>
+                <div id="log-out">
+                    <li><div id = "button"><a href="/logout">Log Out</a></div></li>
+                </div>
+            </ul>
+        </div>
+
     </div>
-</body>
+</div>
+
+<div class="parsed-data">
+    #parse($template)
+</div>
+
 
 </html>

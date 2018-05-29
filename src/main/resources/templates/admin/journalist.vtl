@@ -1,28 +1,32 @@
-<p class="pageHeader">SGNN News Website Administration </p>
-<p>Welcome $user. Here you can add or remove staff, or update their details. <a href="/logout">Logout</a></p>
+<div id = "page-info">SGNN News Website Administration</p>
+    <p>Here you can add or remove staff, or update their details.</div>
 
+<div id = "admin-create">
+    <form action="/admin/journalists" method="post">
+        <label>Add a New Journalist:</label>
+        <input class="inputbox" type="text" name="name" required="true">
+        <input type="submit" value="Save" class="button">
+    </form>
+</div>
 
-<form action="/admin/journalists" method="post">
-    <label for="name">Add a New Journalist:</label>
-    <input class="inputbox" type="text" name="name" required="true">
-    <input type="submit" value="Save" class="button">
-</form>
+<div id="admin-table">
 
-<table>
-    <tr>
-        <th>SGNN Journalists (A-Z)</th>
-    </tr>
+    <table id = "journalists">
+        <tr>
+            <th>SGNN Journalists (A-Z)</th>
+        </tr>
 
-    #foreach($journalist in $journalists)
-    <tr>
-        <td>$journalist.getName()</td>
-        <td><a href="/admin/journalists/$journalist.getId()/edit" class = "button center"> Edit </a></td>
-        <td><form action="/admin/journalists/$journalist.getId()/delete" method="post">
-            <input type="submit" value="Delete" class="button">
-        </form>
-        </td>
+        #foreach($journalist in $journalists)
+        <tr>
+            <td>$journalist.getName()</td>
+            <td><a href="/admin/journalists/$journalist.getId()/edit" class = "button center"> Edit </a></td>
+            <td><form action="/admin/journalists/$journalist.getId()/delete" method="post">
+                <input type="submit" value="Delete" class="button">
+            </form>
+            </td>
 
-    </tr>
-    #end
+        </tr>
+        #end
 
-</table>
+    </table>
+</div>

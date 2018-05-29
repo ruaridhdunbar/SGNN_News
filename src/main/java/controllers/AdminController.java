@@ -38,6 +38,8 @@ public class AdminController{
             List<Journalist> journalists = DBHelper.getAll(Journalist.class);
             HashMap<String, Object> model = new HashMap<>();
             Set<CategoryType> categories = EnumSet.allOf(CategoryType.class);
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            model.put("user", loggedInUser);
             model.put("categories", categories);
             model.put("journalists", journalists);
             model.put("template", "templates/admin/create_article.vtl");
