@@ -1,8 +1,13 @@
-<div class="full-story">
-    <p><a href="/journalists/$journalist.getId()">$article.getJournalist().getName()</a></p>
-    <p>$article.getHeadline()</p>
-    <p>$article.getCategory()</p>
-    <p>$article.prettyDate()</p>
-    <p>$article.getSummary()</p>
-    <p>$article.getStory()</p>
+<div class="single-article-container">
+
+    <div class="single-article-story">
+        <h2 class="headline">$article.getHeadline()</a></h2>
+        <p><a class="journalist-link" href="/journalists/$journalist.getId()">$article.getJournalist().getName()</a></p>
+        <p class="single-article-date">$article.prettyDate()</p>
+        <img id="single-article-image" src="$article.getImageURL()">
+        <p>$article.getSummary()</p>
+        <p>$article.getStory()</p>
+        <p><a class="category-link" href="$article.getCategory().name()">$article.getCategory().name()</a></p>
+    </div>
 </div>
+

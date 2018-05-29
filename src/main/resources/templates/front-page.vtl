@@ -14,7 +14,7 @@
             </div>
             <p><a class="news-link" href="/articles/$articles.get(0).getId()">$articles.get(0).getSummary()</a></p>
             <div class="article-data">
-                <p class="article-category">$articles.get(0).getCategory()</p>
+                <p><a class="category-link" href="/articles/categories/$articles.get(0).getCategory().name()">$articles.get(0).getCategory()</a></p>
             </div>
         </div>
     </div>
@@ -28,6 +28,9 @@
                 <p class="article-date">$articles.get(1).prettyDate()</p>
             </div>
             <p><a class="news-link" href="/articles/$articles.get(1).getId()">$articles.get(1).getSummary()</a></p>
+            <div class="article-data">
+                <p><a class="category-link" href="/articles/categories/$articles.get(1).getCategory().name()">$articles.get(1).getCategory()</a></p>
+            </div>
         </div>
 
         <div id="story-3">
@@ -37,19 +40,25 @@
                 <p class="article-date">$articles.get(2).prettyDate()</p>
             </div>
             <p><a class="news-link" href="/articles/$articles.get(2).getId()">$articles.get(2).getSummary()</a></p>
+            <div class="article-data">
+                <p><a class="category-link" href="/articles/categories/$articles.get(2).getCategory().name()">$articles.get(2).getCategory()</a></p>
+            </div>
         </div>
 
     </div>
 
     <div class="box item3">
 
-        <div class="news-story">
+        <div class="story-4">
             <h2 class="headline"><a class="news-link" href="/articles/$articles.get(3).getId()">$articles.get(3).getHeadline()</a>
             </h2>
             <div class="article-data">
                 <p class="article-date">$articles.get(3).prettyDate()</p>
             </div>
             <p><a class="news-link" href="/articles/$articles.get(3).getId()">$articles.get(3).getSummary()</a></p>
+            <div class="article-data">
+                <p><a class="category-link" href="/articles/categories/$articles.get(3).getCategory().name()">$articles.get(3).getCategory()</a></p>
+            </div>
         </div>
 
         <div id="story-5">
@@ -59,6 +68,9 @@
                 <p class="article-date">$articles.get(4).prettyDate()</p>
             </div>
             <p><a class="news-link" href="/articles/$articles.get(4).getId()">$articles.get(4).getSummary()</a></p>
+            <div class="article-data">
+                <p><a class="category-link" href="/articles/categories/$articles.get(4).getCategory().name()">$articles.get(4).getCategory()</a></p>
+            </div>
         </div>
 
         <div id="story-6">
@@ -68,6 +80,9 @@
                 <p class="article-date">$articles.get(5).prettyDate()</p>
             </div>
             <p><a class="news-link" href="/articles/$articles.get(5).getId()">$articles.get(5).getSummary()</a></p>
+            <div class="article-data">
+                <p><a class="category-link" href="/articles/categories/$articles.get(5).getCategory().name()">$articles.get(5).getCategory()</a></p>
+            </div>
         </div>
     </div>
 

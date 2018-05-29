@@ -52,7 +52,7 @@ public class Seeds {
 
         Article article4 = new Article(journalist2, "Upul's Trumpet Store posts record profits", "As new stores open in New York, London and Tokyo, 'Upul's Trumpet Store posts record profits of £450 million.","War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.UK, "https://media.wwbw.com/is/image/MMGS7/BTR-300-Series-Student-Bb-Trumpet-Lacquer/463683000420000-00-500x500.jpg");
         Calendar cal4 = new GregorianCalendar();
-        cal4.set(2018, Calendar.MAY, 25);
+        cal4.set(2018, Calendar.MAY, 23);
         article4.setDateCreated(cal4);
         article4.setPageViews(35);
         DBHelper.save(article4);
@@ -65,7 +65,7 @@ public class Seeds {
 
         Article article6 = new Article(journalist2, "Dragon Games owner still on the run", "The Scottish Gangsta Rap' star celebrated as hit record 'Not a Statement' topped the charts.", "War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.UK, "https://vignette.wikia.nocookie.net/dragonage/images/8/80/Concept-HighDragon.jpg/revision/latest?cb=20100113122141");
         Calendar cal6 = new GregorianCalendar();
-        cal6.set(2018, Calendar.MAY, 23);
+        cal6.set(2018, Calendar.MAY, 25);
         article6.setDateCreated(cal6);
         article6.setPageViews(18);
         DBHelper.save(article6);
