@@ -7,6 +7,8 @@
 
 td {
   color: black;
+  border: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 
@@ -17,7 +19,8 @@ th {
 
 table {
   border-collapse: collapse;
-  width: 455px;
+  width: 950px;
+
 }
 
 table, th, td {

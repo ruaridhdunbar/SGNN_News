@@ -19,6 +19,7 @@ public class Journalist {
 
     public Journalist() {
     }
+
     @Column(name="name")
     public String getName() {
         return name;

@@ -21,10 +21,21 @@ public class AdminController{
 
     private void setupEndPoints() {
 
+        //        ADMIN INDEX
+        get("/admin", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Article> articles = DBHelper.orderByPageViewsMostFirst();
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            model.put("user", loggedInUser);
+            model.put("template", "templates/admin/index.vtl");
+            model.put("articles", articles);
+            return new ModelAndView(model, "templates/adminlayout.vtl");
+        }, new VelocityTemplateEngine());
+
         //        ARTICLE INDEX
         get("/admin/articles", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            List<Article> articles = DBHelper.getAll(Article.class);
+            List<Article> articles = DBHelper.orderByDateCreatedNewestFirst();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
             model.put("user", loggedInUser);
             model.put("template", "templates/admin/article.vtl");
