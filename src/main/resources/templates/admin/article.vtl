@@ -6,19 +6,25 @@
 </div>
 
 <div id="admin-table">
-    <table id = "articles">
+    <table>
         <tr>
             <th>SGNN Articles</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Journalist</th>
+
         </tr>
 
         #foreach($article in $articles)
         <tr>
             <td>$article.getHeadline()</td>
+            <td>$article.prettyDate()</td>
+            <td>$article.getCategory()</td>
+            <td>$article.getJournalist().getName()</td>
             <td><form action = "/admin/articles/$article.getId()/edit" method="get"><input type="submit" value="Edit" class="button"></form></td>
             <td><form action="/admin/articles/$article.getId()/delete" method="post">
                 <input type="submit" value="Delete" class="button">
             </form>
-            </div>
             </td>
         </tr>
         #end
