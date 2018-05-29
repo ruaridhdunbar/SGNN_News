@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: Helvetica;
-  font-size: 18px;
+   font-family: 'Tajawal', sans-serif;
    background: rgb(171, 205, 239);
    background-size: 100%;
    background-repeat: no-repeat;
@@ -9,15 +8,22 @@ body {
 
 #top-bar {
   width: 100%;
-  background-color: navy;
-  height: 45px;
+  background-color: #33698e;
+  height: 70px;
   color: white;
 }
 
 #logo-div {
 float: left;
+padding-right: 100px;
 }
 
+#logo {
+  padding-top: 10px;
+  height: 50px;
+  padding-left: 70px;
+  padding-right: 10px;
+}
 
 #top-menu ul {
   margin: 0;
@@ -51,12 +57,10 @@ float: left;
 
 
 #top-menu li {
-  list-style: none;
-  font-weight: bold;
-  border-right: 1px solid cornflowerblue;
-  height: 100%;
-  padding: 10px 20px 12px 20px;
-  float: left;
+   list-style: none;
+   border-right: 1px solid #22465e;
+   padding: 39px 20px 12px 15px;
+   float: left;
 }
 
 #top-menu a {
@@ -66,10 +70,6 @@ float: left;
 .menu-list {
   text-decoration: none;
   color: white;
-}
-
-a:hover {
-  background-color: cornflowerblue
 }
 
 #page-info {
@@ -145,3 +145,4 @@ a:hover {
     min-height: 300px;
     min-width: 80%;
 }
+
