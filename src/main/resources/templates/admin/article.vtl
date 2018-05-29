@@ -1,23 +1,24 @@
-<p class="pageHeader">SGNN News Website Administration </p>
-<p>Welcome $user. Here you can create, edit or remove articles. <a href="/logout">Logout</a></p>
+<div id = "page-info">SGNN News Website Administration
+    <p>Here you can create, edit or remove articles.</div>
 
+<div id = "admin-create">
+    <div id = "button"><a href="/admin/articles/new"> Add a New Article </a></div>
+</div>
 
-<div class="admin/article">
-
-    <a href="/admin/articles/new" class = "button center"> Add a New Article </a>
-
-    <table>
+<div id="admin-table">
+    <table id = "articles">
         <tr>
             <th>SGNN Articles</th>
         </tr>
 
         #foreach($article in $articles)
         <tr>
-            <td><a>$article.getHeadline()</a></td>
-            <td><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></td>
-            <td><form action="/admin/articles/$article.getId()/delete" method="post">
+            <td>$article.getHeadline()</td>
+            <td><div id = "admin-button"><a href="/admin/articles/$article.getId()/edit" class = "button center"> Edit </a></div></td>
+            <td><div id = "admin-button"><form action="/admin/articles/$article.getId()/delete" method="post">
                 <input type="submit" value="Delete" class="button">
             </form>
+            </div>
             </td>
         </tr>
         #end
