@@ -1,0 +1,23 @@
+<div class="button-container">
+    <button class="button"><a class="article-link" href="/articles/newest-articles">Newest</a></button>
+    <button class="button"><a class="article-link" href="/articles/oldest-articles">Oldest</a></button>
+    <button class="selected-button"><a class="article-link" href="/articles/most-popular">Most Popular</a></button>
+</div>
+
+<div class="article-container">
+
+    #foreach ($popularArticle in $popularArticles)
+    <div class="all-articles">
+        <h2 class="headline"><a class="news-link" href="/articles/$popularArticle.getId()">$popularArticle.getHeadline()</a>
+        </h2>
+        <div class="article-data">
+            <p class="article-date">$popularArticle.prettyDate()</p>
+        </div>
+        <p><a class="news-link" href="/articles/$popularArticle.getId()">$popularArticle.getSummary()</a></p>
+        <p><a class="article-category-link" href="/articles/categories/$popularArticle.getCategory().name()">$popularArticle.getCategory().name()</a>
+        </p>
+    </div>
+    #end
+
+</div>
+

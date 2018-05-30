@@ -1,0 +1,33 @@
+<div id = "page-info">SGNN News Website Administration
+    <p>Here you can create, edit or remove articles.</div>
+
+<div id = "admin-create">
+    <div id = "admin-button"><a href="/admin/articles/new"> Add a New Article </a></div>
+</div>
+
+<div id="admin-table">
+    <table>
+        <tr>
+            <th>SGNN Articles</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Journalist</th>
+
+        </tr>
+
+        #foreach($article in $articles)
+        <tr>
+            <td>$article.getHeadline()</td>
+            <td>$article.prettyDate()</td>
+            <td>$article.getCategory()</td>
+            <td>$article.getJournalist().getName()</td>
+            <td><form action = "/admin/articles/$article.getId()/edit" method="get"><input type="submit" value="Edit" class="button"></form></td>
+            <td><form action="/admin/articles/$article.getId()/delete" method="post">
+                <input type="submit" value="Delete" class="button">
+            </form>
+            </td>
+        </tr>
+        #end
+
+    </table>
+</div>

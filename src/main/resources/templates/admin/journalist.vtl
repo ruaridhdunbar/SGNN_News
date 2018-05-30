@@ -1,0 +1,34 @@
+<div id = "page-info">SGNN News Website Administration</p>
+    <p>Here you can add or remove staff, or update their details.</div>
+
+<div id = "admin-create">
+    <form action="/admin/journalists" method="post">
+        <label>Add a New Journalist:</label>
+        <input class="inputbox" type="text" name="name" required="true" autocomplete="off">
+        <input type="submit" value="Save" class="button">
+    </form>
+</div>
+
+<div id="admin-table">
+
+    <table id = "journalists">
+        <tr>
+            <th>SGNN Journalists (A-Z)</th>
+        </tr>
+
+        #foreach($journalist in $journalists)
+        <tr>
+            <td>$journalist.getName()</td>
+
+            <td><form action ="/admin/journalists/$journalist.getId()/edit" method="get"><input type="submit" value="Edit" class="button"></form></td>
+
+            <td><form action="/admin/journalists/$journalist.getId()/delete" method="post">
+                <input type="submit" value="Delete" class="button">
+            </form>
+            </td>
+
+        </tr>
+        #end
+
+    </table>
+</div>

@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
+}
+
+#top-bar {
+  width: 100%;
+  background-color: #33698e;
+  height: 70px;
+  color: white;
+}
+
+#logo-div {
+  float: left;
+  padding-right: 170px;
+}
+
+#logo {
+  padding-top: 10px;
+  height: 60px;
+  padding-left: 70px;
+  padding-right: 10px;
+}
+
+#top-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#top-menu li {
+  list-style: none;
+  border-right: 1px solid #22465e;
+  padding: 39px 20px 12px 15px;
+  float: left;
+}
+
+.menu-list {
+  text-decoration: none;
+  color: white;
+}
+
+#first-list-item {
+  border-left: 1px solid #22465e;
+}
+
+#search-bar-position {
+  float: right;
+  padding: 20px 30px 0px 50px;
+  width: 280px;
+
+}
+
+#search-bar {
+  height: 36px;
+  padding-left: 10px;
+  width: 120px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+}
+
+button#search-bar-button{
+  width: 60px;
+  height:36px;
+  padding: 1px;
+  font-family: 'Tajawal', sans-serif;
+}

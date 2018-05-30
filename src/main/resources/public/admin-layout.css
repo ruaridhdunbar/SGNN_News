@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+   font-family: 'Tajawal', sans-serif;
+   background: rgb(171, 205, 239);
+   background-size: 100%;
+   background-repeat: no-repeat;
+}
+
+#top-bar {
+  width: 100%;
+  background-color: #33698e;
+  height: 70px;
+  color: white;
+
+}
+
+#logo-div {
+float: left;
+padding-right: 100px;
+}
+
+#logo {
+  padding-top: 10px;
+  height: 50px;
+  padding-left: 70px;
+  padding-right: 10px;
+}
+
+#top-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#user {
+    float: right;
+    top: -30px;
+}
+
+#log-out {
+    float: right;
+
+}
+
+#log-out a {
+ color: black;
+}
+
+#button-menu a {
+    color: #f2f2f2;
+}
+
+#button {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+    padding: 0px 5px 0px 5px;
+}
+
+
+#top-menu li {
+   list-style: none;
+   border-right: 1px solid #22465e;
+   padding: 39px 20px 12px 15px;
+   float: left;
+}
+
+#first-list-item {
+  border-left: 1px solid #22465e;
+}
+
+#top-menu a {
+    text-decoration: none;
+}
+
+.menu-list {
+  text-decoration: none;
+  color: white;
+}
+
+#page-info {
+  background-color: rgba(248, 245, 236, 0.5);
+  color: black;
+  padding: 10px 20px 10px 10px;
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 33%;
+  margin-right: 33%;
+ }
+
+ .page-info {
+   background-color: rgba(248, 245, 236, 0.5);
+   color: black;
+   padding: 10px 20px 10px 10px;
+   text-align: center;
+   margin-top: 1%;
+   margin-left: 33%;
+   margin-right: 33%;
+  }
+
+
+#admin-create{
+    background-color: rgba(248, 245, 236, 0.5);
+    color: black;
+    padding: 10px 20px 10px 10px;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-bottom: 1%;
+}
+
+#admin-create a{
+    text-decoration: none;
+}
+
+#admin-button {
+    background-color: rgba(248, 245, 236, 0.5);
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 0px 5px 5px 5px;
+}
+
+#admin-button a{
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+}
+
+#edit-headline{
+    display: flex;
+    justify-content: center;
+
+}
+
+#edit-summary{
+      display: flex;
+      justify-content: center;
+}
+
+#edit-body{
+    display: flex;
+    justify-content: center;
+}
+
+#edit-image{
+    display: flex;
+    justify-content: center;
+}
+
+#edit-image input{
+    min-height: 10px;
+    min-width: 88%;
+}
+
+#edit-hero{
+    display: flex;
+    justify-content: center;
+}
+
+#edit-hero input{
+    min-height: 10px;
+    min-width: 88%;
+}
+
+
+li#logout-list {
+    padding-bottom: 9px;
+}
+
+#select-options{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+div.option-1{
+    margin-right: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#save-cancel{
+    display: flex;
+    justify-content: center;
+}
+
+#save{
+  display: flex;
+  justify-content: center;
+}
+
+#cancel{
+  display: flex;
+  justify-content: center;
+}

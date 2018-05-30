@@ -1,0 +1,40 @@
+.single-article-container {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+  height: 610px;
+  overflow: scroll;
+}
+
+.single-article-story {
+  grid-column-start: 2;
+  grid-column-end: span 1;
+}
+
+.article-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: 'Tajawal', sans-serif;
+  text-align: center;
+}
+
+img#single-article-image {
+  width: 450px;
+}
+
+a.category-link {
+  text-decoration: none;
+  color: #33698e;
+}
+
+a.journalist-link {
+  text-decoration: none;
+  color: #33698e;
+}
+
+p.single-article-date {
+  font-size: 14px;
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SGNN Admin Portal</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <link href="/admin-layout.css" rel="stylesheet" type="text/css" />
+    <link href="/admin-table.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="/images/favicon2.png"/>
+</head>
+
+<div id="container">
+    <div id="top-bar">
+
+        <div id="top-menu">
+
+            <div id="logo-div">
+                <a href="/news"><img id="logo" src="/images/logo.png"></a>
+            </div>
+            <ul>
+                <div id ="button-menu">
+                    <li id="first-list-item"><a href="/admin">Home</a></li>
+                    <li><a href="/admin/articles">View Articles</a></li>
+                    <li><a href="/admin/journalists">View Journalists</a></li>
+                </div>
+
+                <div id="log-out">
+                    <li id ="logout-list"><div id = "button"><a href="/logout">Log Out</a></div></li>
+                </div>
+                <div id = "user"><li>$user</li></div>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="parsed-data">
+    #parse($template)
+</div>
+
+
+</html>

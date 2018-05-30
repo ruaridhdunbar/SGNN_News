@@ -1,0 +1,16 @@
+<div class="search-container">
+
+    #foreach ($searchResult in $searchResults)
+    <div class="search-articles">
+        <h2 class="headline"><a class="news-link" href="/articles/$searchResult.getId()">$searchResult.getHeadline()</a></h2>
+
+        <div class="article-data">
+            <p class="article-date">$searchResult.prettyDate()</p>
+        </div>
+        <p><a class="news-link" href="/articles/$searchResult.getId()">$searchResult.getSummary()</a></p>
+
+            <p><a class="search-category-link" href="/articles/categories/$searchResult.getCategory().name()">$searchResult.getCategory().name()</a></p>
+    </div>
+    #end
+
+</div>

@@ -1,0 +1,30 @@
+<div class="button-container">
+    <button class="button"><a class="article-link" href="/articles/categories/SCOTLAND">Scotland</a></button>
+    <button class="selected-button"><a class="article-link" href="/articles/categories/UK">UK</a></button>
+    <button class="button"><a class="article-link" href="/articles/categories/WORLD">World</a></button>
+    <button class="button"><a class="article-link" href="/articles/categories/POLITICS">Politics</a></button>
+    <button class="button"><a class="article-link" href="/articles/categories/TECH">Tech</a></button>
+    <button class="button"><a class="article-link" href="/articles/categories/SCIENCE">Science</a></button>
+    <button class="button"><a class="article-link" href="/articles/categories/SPORTS">Sports</a></button>
+</div>
+
+<div class="category-container">
+
+#foreach ($article in $categoryArticles)
+<div class="all-articles">
+    <h2 class="headline"><a class="news-link" href="/articles/$article.getId()">$article.getHeadline()</a>
+    </h2>
+    <div class="article-data">
+        <p class="article-date">$article.prettyDate()</p>
+    </div>
+    <p><a class="news-link" href="/articles/$article.getId()">$article.getSummary()</a></p>
+    <div class="article-data">
+        <p class="article-category">$article.getCategory()</p>
+    </div>
+</div>
+#end
+
+</div>
+
+
+

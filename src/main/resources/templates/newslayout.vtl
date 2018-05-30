@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SGNN News</title>
+    <link href="/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-navbar.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-front-page.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-ticker-tape.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-all-articles.css" rel="stylesheet" type="text/css"/>
+    <link href="/news-single-article.css" rel="stylesheet" type="text/css"/>
+    <link href="/journalist-articles.css" rel="stylesheet" type="text/css"/>
+    <link href="/search-results.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700" rel="stylesheet">
+    <link rel="icon" href="/images/favicon2.png"/>
+
+</head>
+<body>
+
+<div id="container">
+    <div id="top-bar">
+
+        <div id="top-menu">
+            <div id="logo-div">
+                <a href="/news"><img id="logo" src="/images/logo.png"></a>
+            </div>
+
+            <ul>
+                <li id="first-list-item"><a class="menu-list" href="/news">Home</a></li>
+                <li><a class="menu-list" href="/articles/newest-articles">All Articles</a></li>
+                <li><a class="menu-list" href="/articles/most-popular">Most Popular</a></li>
+                <li><a class="menu-list" href="/articles/categories/SCOTLAND">Categories</a></li>
+            </ul>
+
+
+            <div id="search-bar-position">
+                <form action="/articles/search-results" method="get" autocomplete="off">
+                    <input id="search-bar" type="text" placeholder="Search..." name="search">
+                    <button id="search-bar-button" type="submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="ticker-wrap">
+        <div class="ticker">
+            #foreach ($article in $articles)
+            <div class="ticker__item"><a class="ticker-item-link" href="/articles/$article.getId()">$article.getHeadline(). &nbsp &nbsp </a></div>
+             #end
+        </div>
+    </div>
+</div>
+
+
+<div class="parsed-data">
+    #parse( $template )
+</div>
+</body>
+</html>
+
