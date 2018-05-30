@@ -1,0 +1,30 @@
+.search-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 33% 33% 33%;
+  height: 530px;
+  padding-left: 100px;
+  padding-right: 100px;
+  overflow: scroll;
+}
+
+div.search-articles {
+  margin-top: 20px;
+}
+
+.article-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: 'Tajawal', sans-serif;
+  text-align: center;
+}
+
+
+a.search-category-link {
+  text-decoration: none;
+  color: #33698e;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 0;
+}

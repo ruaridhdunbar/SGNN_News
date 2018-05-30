@@ -78,7 +78,7 @@ padding-right: 100px;
   color: white;
 }
 
-#page-info {
+.page-info {
   background-color: rgba(248, 245, 236, 0.5);
   color: black;
   padding: 10px 20px 10px 10px;
@@ -140,6 +140,16 @@ padding-right: 100px;
 }
 
 #edit-image input{
+    min-height: 10px;
+    min-width: 88%;
+}
+
+#edit-hero{
+    display: flex;
+    justify-content: center;
+}
+
+#edit-hero input{
     min-height: 10px;
     min-width: 88%;
 }

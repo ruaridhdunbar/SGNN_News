@@ -1,8 +1,18 @@
 .article-container {
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-template-rows: 200px;
+  height: 530px;
+  padding-left: 100px;
+  padding-right: 100px;
+  overflow: scroll;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 33% 33% 33%;
-  height: 520px;
+  height: 530px;
   padding-left: 100px;
   padding-right: 100px;
   overflow: scroll;
@@ -49,4 +59,12 @@
   height: 60px;
   width: 120px;
   margin: 10px;
+}
+
+a.article-category-link {
+  text-decoration: none;
+  color: #33698e;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 0;
 }

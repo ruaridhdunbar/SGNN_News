@@ -1,6 +1,6 @@
-<p id="journalist-name">$journalist.getName()</p>
+<h2 id="journalist-name">$journalist.getName()</h2>
 
-<div class="article-container">
+<div class="category-container">
 
     #foreach ($article in $articles)
     <div class="all-articles">
@@ -10,9 +10,7 @@
             <p class="article-date">$article.prettyDate()</p>
         </div>
         <p><a class="news-link" href="/articles/$article.getId()">$article.getSummary()</a></p>
-        <div class="article-data">
-            <p class="article-category">$article.getCategory()</p>
-        </div>
+        <p><a class="article-category-link" href="/articles/categories/$article.getCategory().name()">$article.getCategory().name()</a></p>
     </div>
     #end
 
