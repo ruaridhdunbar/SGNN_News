@@ -1,11 +1,17 @@
-<p class="pageHeader">Edit Journalist</p>
+<div id ="page-info">Edit Journalist</div>
 
 <form action="/admin/journalists/$journalist.getId()" method="post">
 
+<div id="page-info">
     <label>Name:</label>
+    </div>
+    <div id="select-options">
     <input class="inputbox" type="text" name="name" required="true" value="$journalist.getName()">
 
     <input type="submit" value="Save" class="button">
+    </div>
 </form>
 
+<div id = "cancel">
 <form action = "/admin/journalists" method = "get"><input type="submit" value="Cancel" class="button"></form>
+</div>
