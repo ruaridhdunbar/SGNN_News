@@ -38,7 +38,7 @@ public class UsernameList {
         combined.addAll(journalists);
         combined.addAll(editors);
         for (String user : combined){
-            if (user.contains(name)){
+            if (user.equals(name)){
                 return true;
             }
         }

@@ -78,7 +78,7 @@ padding-right: 100px;
   color: white;
 }
 
-.page-info {
+#page-info {
   background-color: rgba(248, 245, 236, 0.5);
   color: black;
   padding: 10px 20px 10px 10px;
@@ -87,6 +87,17 @@ padding-right: 100px;
   margin-left: 33%;
   margin-right: 33%;
  }
+
+ .page-info {
+   background-color: rgba(248, 245, 236, 0.5);
+   color: black;
+   padding: 10px 20px 10px 10px;
+   text-align: center;
+   margin-top: 1%;
+   margin-left: 33%;
+   margin-right: 33%;
+  }
+
 
 #admin-create{
     background-color: rgba(248, 245, 236, 0.5);
@@ -171,4 +182,19 @@ div.option-1{
 
 textarea {
     resize: vertical;
+}
+
+#save-cancel{
+    display: flex;
+    justify-content: center;
+}
+
+#save{
+  display: flex;
+  justify-content: center;
+}
+
+#cancel{
+  display: flex;
+  justify-content: center;
 }
