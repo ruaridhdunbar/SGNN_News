@@ -35,18 +35,22 @@ public class ArticleController {
 
         //        INDEX ALL ARTICLES BY OLDEST FIRST
         get("/articles/oldest-articles", (req, res) -> {
-            List<Article> articles = DBHelper.orderByDateCreatedOldestFirst();
+            List<Article> oldestArticles = DBHelper.orderByDateCreatedOldestFirst();
+            List<Article> articles = DBHelper.getAll(Article.class);
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
+            model.put("oldestArticles", oldestArticles);
             model.put("template", "templates/articles/all-articles-oldest.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
         //        INDEX ALL ARTICLES BY MOST NUMBER OF VIEWS
         get("/articles/most-popular", (req, res) -> {
-            List<Article> articles = DBHelper.orderByPageViewsMostFirst();
+            List<Article> popularArticles = DBHelper.orderByPageViewsMostFirst();
+            List<Article> articles = DBHelper.getAll(Article.class);
             HashMap<String, Object> model = new HashMap<>();
             model.put("articles", articles);
+            model.put("popularArticles", popularArticles);
             model.put("template", "templates/articles/all-articles-most-popular.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());

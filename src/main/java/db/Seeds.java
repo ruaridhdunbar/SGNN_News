@@ -54,7 +54,7 @@ public class Seeds {
         article3.setDateCreated(cal3);
         DBHelper.save(article3);
 
-        Article article4 = new Article(journalist2, "Upul's Trumpet Store posts record profits", "As new stores open in New York, London and Tokyo, 'Upul's Trumpet Store posts record profits of £450 million.","War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.UK, "images/trumpet1.jpg", "images/trumpet2.jpg");
+        Article article4 = new Article(journalist2, "Upul's Trumpet Store posts record profits", "As new stores open in New York, London and Tokyo, Upul's Trumpet Store posts record profits of £450 million.","War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.UK, "images/trumpet1.jpg", "images/trumpet2.jpg");
         Calendar cal4 = new GregorianCalendar();
         cal4.set(2018, Calendar.MAY, 23);
         article4.setDateCreated(cal4);
@@ -67,7 +67,7 @@ public class Seeds {
         article5.setDateCreated(cal5);
         DBHelper.save(article5);
 
-        Article article6 = new Article(journalist2, "Dragon Games considered 'better than Amazon' by industry leaders", "The Glasgow based startup launched their online shop recently to critical acclaim", "Hailed by Amazon Chief, Jeff Bezos, as 'pure brilliant', Dragon Games recently launched as the one-stop portal for all your gaming needs.  Despite initial teething problems with the online basket function, industry leaders and consumers have reacted with glowing reviews", CategoryType.UK,"images/dragon1.jpg", "images/dragon2.jpg");
+        Article article6 = new Article(journalist2, "Dragon Games considered 'better than Amazon' by industry leaders", "The Glasgow based startup launched their online shop recently to critical acclaim", "Hailed by Amazon Chief, Jeff Bezos, as 'pure brilliant', Dragon Games recently launched as the one-stop portal for all your gaming needs.  Despite initial teething problems with the online basket function, industry leaders and consumers have reacted with glowing reviews", CategoryType.TECH,"images/dragon1.jpg", "images/dragon2.jpg");
         Calendar cal6 = new GregorianCalendar();
         cal6.set(2018, Calendar.MAY, 25);
         article6.setDateCreated(cal6);
@@ -76,7 +76,7 @@ public class Seeds {
 
         Article article7 = new Article(journalist3, "Trump: 'Solution found to prevent any more school shootings'", "The President today announced that he has found a solution to the scourge of school violence after working closely with NRA chiefs.", "The President today announced that he has been in close talks with NRA leader Wayne LaPierre, in relation to an epidemic of school shootings that shows no signs of stopping. Following on from LaPierre's recent assertion that 'The only thing that can stop a bad guy with a gun, is a good guy with a gun', Trump said this was the catalyst for a revelation. 'We sat down in my office, trying to think of solutions to this terrible situation. Then it came to us. If we need more good guys to stop the bad guys - who is more good and more innocent, than our nation's children? What's more, children are literally incapable of becoming a criminal until the age of 11, as they are under the federal criminal age of responsibility! Therefore, effective immediately, the 2nd Amendment will extend to all children as soon as they enter school at the age of 5. Gym classes will be scrapped and in their place will be self-defense exercises, in which they will train to exercise their right to defend themselves and their classmates.", CategoryType.WORLD, "https://s.abcnews.com/images/GMA/140131_gma_sawyer_wg.jpg", "");
         Calendar cal7 = new GregorianCalendar();
-        cal6.set(2018, Calendar.MAY, 28);
+        cal7.set(2018, Calendar.MAY, 27);
         article7.setDateCreated(cal7);
         article7.setPageViews(40);
         DBHelper.save(article7);

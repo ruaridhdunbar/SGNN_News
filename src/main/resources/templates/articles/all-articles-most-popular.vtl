@@ -6,15 +6,15 @@
 
 <div class="article-container">
 
-    #foreach ($article in $articles)
+    #foreach ($popularArticle in $popularArticles)
     <div class="all-articles">
-        <h2 class="headline"><a class="news-link" href="/articles/$article.getId()">$article.getHeadline()</a>
+        <h2 class="headline"><a class="news-link" href="/articles/$popularArticle.getId()">$popularArticle.getHeadline()</a>
         </h2>
         <div class="article-data">
-            <p class="article-date">$article.prettyDate()</p>
+            <p class="article-date">$popularArticle.prettyDate()</p>
         </div>
-        <p><a class="news-link" href="/articles/$article.getId()">$article.getSummary()</a></p>
-        <p><a class="article-category-link" href="/articles/categories/$article.getCategory().name()">$article.getCategory().name()</a>
+        <p><a class="news-link" href="/articles/$popularArticle.getId()">$popularArticle.getSummary()</a></p>
+        <p><a class="article-category-link" href="/articles/categories/$popularArticle.getCategory().name()">$popularArticle.getCategory().name()</a>
         </p>
     </div>
     #end
