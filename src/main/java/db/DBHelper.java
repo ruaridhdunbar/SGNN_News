@@ -218,7 +218,9 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        if (results.size() > 0) {
+        return results;}
+        else return null;
     }
 
     public static List<Article> searchArticlesSummary(String search) {
@@ -233,7 +235,9 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        if (results.size() > 0) {
+            return results;}
+        else return null;
     }
 
     public static List<Journalist> searchJournalists(String search) {
@@ -248,7 +252,9 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        if (results.size() > 0) {
+            return results;}
+        else return null;
     }
 
     public static Boolean checkForEmptyList(String search) {

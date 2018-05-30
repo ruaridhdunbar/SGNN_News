@@ -46,7 +46,7 @@ public class Seeds {
 //        article2.setPageViews(40);
         DBHelper.save(article2);
 
-        Article article3 = new Article(journalist2, "War with Russia is imminent", "Get indoors now because its about to go off.", "War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.UK, "images/vlad1.jpg", "images/vlad2.jpg");
+        Article article3 = new Article(journalist2, "War with Russia is imminent", "Get indoors now because its about to go off.", "War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesnt have the 'balls' to go to war with the UK", CategoryType.WORLD, "images/vlad1.jpg", "images/vlad2.jpg");
         article3.setPageViews(45);
         Calendar cal3 = new GregorianCalendar();
         cal3.set(2018, Calendar.MAY, 19);
@@ -60,7 +60,7 @@ public class Seeds {
         article4.setPageViews(35);
         DBHelper.save(article4);
 
-        Article article5 = new Article(journalist2, "Big Daddy Kane scores first UK #1", "The Scottish Gangsta Rap' star celebrated as hit record 'Not a Statement' topped the charts.", "War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesn't have the 'balls' to go to war with the UK", CategoryType.UK, "images/bdc1.jpg", "images/bdc2.jpg");
+        Article article5 = new Article(journalist2, "Big Daddy Kane scores first UK #1", "The Scottish Gangsta Rap' star celebrated as hit record 'Not a Statement' topped the charts.", "War with Russia is about to begin after Boris Johnson called Vladimir Putin a 'chicken' who doesn't have the 'balls' to go to war with the UK", CategoryType.SCOTLAND, "images/bdc1.jpg", "images/bdc2.jpg");
         Calendar cal5 = new GregorianCalendar();
         cal5.set(2018, Calendar.MAY, 26);
         article5.setDateCreated(cal5);
