@@ -142,6 +142,16 @@ public class ArticleController {
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 
+        // SEARCH RESULTS
+        get("/articles/search-results", (req, res) -> {
+            List<Article> articles = DBHelper.getAll(Article.class);
+            List<Article> searchResults = DBHelper.searchArticlesHeadline(req.queryParams("search"));
+            HashMap<String, Object> model = new HashMap<>();
+            model.put("searchResults", searchResults);
+            model.put("articles", articles);
+            model.put("template", "templates/articles/search-results.vtl");
+            return new ModelAndView(model, "templates/newslayout.vtl");
+        }, new VelocityTemplateEngine());
 
         //        SHOW
         get("/articles/:id", (req, res) -> {
@@ -154,9 +164,11 @@ public class ArticleController {
             model.put("articles", articles);
             model.put("journalist", journalist);
             model.put("article", article);
-            model.put("template", "templates/articles/show.vtl");
+            model.put("template", "templates/articles/single-article.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
+
+
     }
 
 }

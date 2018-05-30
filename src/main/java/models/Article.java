@@ -1,11 +1,7 @@
 package models;
 
-import db.DBHelper;
-
 import javax.persistence.*;
 import java.text.DateFormatSymbols;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -21,12 +17,13 @@ public class Article {
     private Calendar dateCreated;
     private CategoryType category;
     private int pageViews;
-    private String imageURL;
+    private String heroImage;
+    private String articleImage;
 
     public Article() {
     }
 
-    public Article(Journalist journalist, String headline, String summary, String story, CategoryType category, String url) {
+    public Article(Journalist journalist, String headline, String summary, String story, CategoryType category, String hero, String url) {
         this.journalist = journalist;
         this.headline = headline;
         this.summary = summary;
@@ -34,7 +31,8 @@ public class Article {
         this.dateCreated = GregorianCalendar.getInstance();
         this.category = category;
         this.pageViews = 0;
-        this.imageURL = url;
+        this.heroImage = hero;
+        this.articleImage = url;
     }
 
     @Id
@@ -113,12 +111,20 @@ public class Article {
         this.pageViews = pageViews;
     }
 
-    public String getImageURL() {
-        return imageURL;
+    public String getHeroImage() {
+        return heroImage;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setHeroImage(String heroImage) {
+        this.heroImage = heroImage;
+    }
+
+    public String getArticleImage() {
+        return articleImage;
+    }
+
+    public void setArticleImage(String articleImage) {
+        this.articleImage = articleImage;
     }
 
     public void addToPageViews() {

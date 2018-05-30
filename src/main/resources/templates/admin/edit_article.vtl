@@ -1,24 +1,28 @@
 <form action="/admin/articles/$article.getId()" method="post">
 
-    <div id = "page-info">Headline</div>
+    <div class = "page-info">Headline</div>
     <div id = "edit-headline">
         <textarea name="headline" required rows="1" cols ="150">$article.getHeadline()</textarea>
     </div>
 
-    <div id = "page-info">Summary</div>
+    <div class = "page-info">Summary</div>
     <div id = "edit-summary">
         <textarea name="summary" required rows="1" cols="150">$article.getSummary()</textarea>
     </div>
 
-    <div id = "page-info">Body</div>
+    <div class = "page-info">Body</div>
     <div id = "edit-body">
         <textarea name="story" required rows="5" cols="150">$article.getStory()</textarea>
     </div>
 
+    <div class = "page-info">Hero Image:</div>
+    <div id = "edit-hero">
+        <input class="inputbox" type="text" name="heroImage" required="true" value="$article.getHeroImage()">
+    </div>
 
-    <div id = "page-info">ImageURL:</div>
+    <div class = "page-info">Article Image:</div>
     <div id = "edit-image">
-        <input class="inputbox" type="text" name="imageURL" required="true" value="$article.getImageURL()">
+        <input class="inputbox" type="text" name="articleImage" required="true" value="$article.getArticleImage()">
     </div>
 
     <div id ="select-options">
@@ -32,6 +36,8 @@
                 #end
             </select>
         </div>
+
+
         <div class ="option-2">
             <select id="journalist" name="journalist">
                 #foreach( $journalist in $journalists )

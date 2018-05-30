@@ -65,9 +65,10 @@ public class AdminController{
             String summary = req.queryParams("summary");
             String story = req.queryParams("story");
             CategoryType category = CategoryType.valueOf(req.queryParams("category"));
-            String url = req.queryParams(("imageURL"));
+            String heroImage = req.queryParams(("heroImage"));
+            String articleImage = req.queryParams(("articleImage"));
 
-            Article newArticle = new Article(journalist, headline, summary, story, category, url);
+            Article newArticle = new Article(journalist, headline, summary, story, category, heroImage, articleImage);
 
             DBHelper.save(newArticle);
             res.redirect("/admin/articles");
@@ -104,7 +105,8 @@ public class AdminController{
             article.setJournalist(journalist);
             CategoryType category = CategoryType.valueOf(req.queryParams("category"));
             article.setCategory(category);
-            article.setImageURL("imageURL");
+            article.setHeroImage(req.queryParams("heroImage"));
+            article.setArticleImage(req.queryParams("articleImage"));
 
             DBHelper.save(article);
             res.redirect("/admin/articles");

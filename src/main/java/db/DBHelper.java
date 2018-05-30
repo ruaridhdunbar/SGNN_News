@@ -10,8 +10,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DBHelper {
 
@@ -104,7 +103,7 @@ public class DBHelper {
 
         try {
             Criteria cr = session.createCriteria(Article.class);
-            cr.add(Restrictions.eq("journalist", journalist ));
+            cr.add(Restrictions.eq("journalist", journalist));
             articles = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -115,7 +114,7 @@ public class DBHelper {
 
     }
 
-    public static List<Article> orderByPageViewsFewestFirst(){
+    public static List<Article> orderByPageViewsFewestFirst() {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
@@ -130,7 +129,7 @@ public class DBHelper {
         return articles;
     }
 
-    public static List<Article> orderByPageViewsMostFirst(){
+    public static List<Article> orderByPageViewsMostFirst() {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
@@ -145,7 +144,7 @@ public class DBHelper {
         return articles;
     }
 
-    public static List<Article> orderByDateCreatedOldestFirst(){
+    public static List<Article> orderByDateCreatedOldestFirst() {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
@@ -160,7 +159,7 @@ public class DBHelper {
         return articles;
     }
 
-    public static List<Article> orderByDateCreatedNewestFirst(){
+    public static List<Article> orderByDateCreatedNewestFirst() {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Article> articles = null;
         try {
@@ -219,7 +218,9 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        if (results.size() > 0) {
+        return results;}
+        else return null;
     }
 
     public static List<Article> searchArticlesSummary(String search) {
@@ -234,7 +235,9 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        if (results.size() > 0) {
+            return results;}
+        else return null;
     }
 
     public static List<Journalist> searchJournalists(String search) {
@@ -249,9 +252,53 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        if (results.size() > 0) {
+            return results;}
+        else return null;
     }
 
+    public static Boolean checkForEmptyList(String search) {
+        List<Article> headlines = DBHelper.searchArticlesHeadline(search);
+        List<Article> summary = DBHelper.searchArticlesSummary(search);
+        List<Journalist> journalists = DBHelper.searchJournalists(search);
+
+        return (headlines.size() != 0) && (summary.size() != 0) && (journalists.size() !=0);
+    }
+
+
+//    public static List<Article> searchAll(String search) {
+//
+//        if (DBHelper.checkForEmptyList(search) == false) {
+//            return null;
+//        }
+//
+//        List<Article> headlines = DBHelper.searchArticlesHeadline(search);
+//        List<Article> summary = DBHelper.searchArticlesSummary(search);
+//        List<Journalist> journalists = DBHelper.searchJournalists(search);
+//        List<Article> journalistArticles = null;
+//
+//        for (Journalist journalist : journalists) {
+//            journalistArticles.addAll(articlesForJournalist(journalist));
+//        }
+//
+//        List<Article> allArticles = new ArrayList<>();
+//
+//        if (journalistArticles.size() > 0) {
+//            allArticles.addAll(journalistArticles);
+//        }
+//        if (headlines.size() > 0) {
+//            allArticles.addAll(headlines);
+//        }
+//        if (summary.size() >0 ) {
+//            allArticles.addAll(summary);
+//        }
+//
+//        Set<Article> removeDuplicates = new HashSet<>();
+//        removeDuplicates.addAll(allArticles);
+//        List<Article> uniqueArticles = new ArrayList<>();
+//        allArticles.addAll(removeDuplicates);
+//        return uniqueArticles;
+//    }
 
 
 }

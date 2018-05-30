@@ -31,7 +31,7 @@ public class JournalistController {
             Map<String, Object> model = new HashMap<>();
             model.put("articles", articles);
             model.put("journalist", journalist);
-            model.put("template", "templates/journalists/show.vtl");
+            model.put("template", "templates/journalists/journalist-articles.vtl");
             return new ModelAndView(model, "templates/newslayout.vtl");
         }, new VelocityTemplateEngine());
 

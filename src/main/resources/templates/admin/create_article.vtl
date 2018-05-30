@@ -1,25 +1,29 @@
 <form action="/admin/articles" method="post">
 
 
-    <div id = "page-info">Headline</div>
+    <div class = "page-info">Headline</div>
     <div id = "edit-headline">
         <textarea name="headline" required rows="1" cols ="150"></textarea>
     </div>
 
-    <div id = "page-info">Summary</div>
+    <div class = "page-info">Summary</div>
     <div id = "edit-summary">
         <textarea name="summary" required rows="1" cols="150"></textarea>
     </div>
 
-    <div id = "page-info">Body</div>
+    <div class = "page-info">Body</div>
     <div id = "edit-body">
         <textarea name="story" required rows="5" cols="150"></textarea>
     </div>
 
+    <div class = "page-info">Hero Image:</div>
+    <div id = "edit-hero">
+        <input class="inputbox" type="text" name="heroImage" required="true">
+    </div>
 
-    <div id = "page-info">ImageURL:</div>
+    <div class = "page-info">Article Image:</div>
     <div id = "edit-image">
-        <input class="inputbox" type="text" name="imageURL" required="true">
+        <input class="inputbox" type="text" name="articleImage" required="true">
     </div>
 
     <div id ="select-options">
@@ -39,11 +43,11 @@
                 #end
             </select>
         </div>
+
     </div>
 
-    <input type="submit" value="Save" class="button">
+    <input type="submit" value="Save" class="button"> </form>
 
-</form>
 
 <form action = "/admin/articles" method = "get"><input type="submit" value="Cancel" class="button"></form>
 
