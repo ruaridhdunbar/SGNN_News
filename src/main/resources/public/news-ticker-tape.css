@@ -13,20 +13,10 @@
     transform: translate3d(-100%, 0, 0);
   }
 }
-@keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
+
 .ticker-wrap {
-  position: fixed;
-  width: 100%;
+  position: relative;
+  width: 0vw;
   overflow: hidden;
   height: 20px;
   background-color: #22465e;
@@ -57,7 +47,6 @@
   color: white;
   padding-top: 7px;
 }
-
 
 .ticker-item-link {
 text-decoration: none;

@@ -28,6 +28,7 @@ public class Journalist {
     public void setName(String name) {
         this.name = name;
     }
+
     @Id
     @GeneratedValue
     @Column(name = "id")
