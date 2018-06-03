@@ -15,8 +15,8 @@
 }
 
 .ticker-wrap {
-  position: fixed;
-  width: 100%;
+  position: relative;
+  width: 0vw;
   overflow: hidden;
   height: 20px;
   background-color: #22465e;

@@ -1,8 +1,9 @@
 .container {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 70% 30%;
-  height: 525px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
+  grid-gap: 20px;
+  height: 100%;
   padding-left: 60px;
   padding-right: 60px;
 }
